@@ -11,6 +11,6 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/williamhzo/ck9ijqka14hy61ip1yja423sl',
-  center: [2.351027, 48.856669],
-  zoom: 9,
+  center: [2.351027, 48.856669], //   [longitude,latitude]
+  zoom: 12,
 });
