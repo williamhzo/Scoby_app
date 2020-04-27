@@ -17,44 +17,50 @@
 
         <div class="form__input-group">
             <label class="form__label" for="category" class="label-ref label">Category</label>
-            <input class="form__input" id="category" type="text" name="category"
-                placeholder="What are you giving away?">
+            <select name="category" id="category" class="form__select">
+                <option value="-1" disabled selected>Choose category</option>
+                <option value="Plant">Plant</option>
+                <option value="Kombucha">Kombucha</option>
+                <option value="Vinegar">Vinegar</option>
+                <option value="Kefir">Kefir</option>
+            </select>
         </div>
 
-        <div>
-            <label for="quantity">Quantity</label>
-            <input name="quantity" id="quantity" type="number" min="1">
+        <div class="form__input-group">
+            <label class="form__label" for="quantity" class="label-ref label">Quantity</label>
+            <input class="form__input" id="quantity" type="number" name="quantity">
         </div>
 
-        <div>
-            <label for="address">Address</label>
-            <input name="address" id="address" type="string">
+        <div class="form__input-group">
+            <label class="form__label" for="address" class="label-ref label">Address</label>
+            <input class="form__input" id="address" type="string" name="address">
         </div>
 
-        <div>
-            <label for="description">Description</label>
-            <input name="description" id="description" type="text">
+        <div class="form__input-group">
+            <label class="form__label" for="description" class="label-ref label">Description</label>
+            <textarea class="form__text-area" id="description" name="description"
+                rows="5">Tell us something about this item</textarea>
         </div>
 
-        <div>
-            <label for="image">Image</label>
-            <button name="image" id="image" type="file"></button>
+        <div class="form__input-group">
+            <label class="form__label" for="image" class="label-ref label">Image</label>
+            <input class="form__input" id="image" type="file" name="image">
         </div>
-
 
         <h3>Contact information</h3>
 
-        <div>
-            <label for="contact">How do you want to be reached?</label>
-            <select name="contact" id="contact" class="select" required>
+        <div class="form__input-group">
+            <label class="form__label" for="contact">How do you want to be reached?</label>
+            <select name="contact" id="contact" class="form__select" required>
                 <option value="-1" disabled selected>Choose a preferred contact</option>
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
             </select>
+            <p><a href="">add phone number</a></p>
         </div>
 
-        <button class="button-primary">Add item</button>
+        <button class="form__button" type="submit">Add item</button>
     </form>
 
     </div>
