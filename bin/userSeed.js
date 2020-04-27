@@ -20,7 +20,7 @@ const users = [{
 }]
 
 mongoose
-    .connect(process.env.MONGO_URI)
+    .connect("mongodb://localhost:27017/app_db")
     .then((self) => {
         console.log(`Connected to ${self.connection.name}`);
         User.create(users)

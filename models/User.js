@@ -10,6 +10,7 @@ const userSchema = new Schema({
     default: 'https://cdn3.iconfinder.com/data/icons/education-science-vol-1-outline/512/raise_hand_students_class-512.png'
   },
   email: String,
+  password: String,
   city: String,
   id_contact: {
     type: Schema.Types.ObjectId,
