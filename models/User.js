@@ -5,7 +5,10 @@ const Item = require('./Item');
 const userSchema = new Schema({
   firstName: String,
   lastName: String,
-  profileImg: {type:String, default:''},
+  profileImg: {
+    type: String,
+    default: ''
+  },
   email: String,
   city: String,
   id_contact: {
