@@ -1,20 +1,29 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Item = require('./Item');
 
 const userSchema = new Schema({
-    name: String,
-    lastName: String,
-    email: String,
-    phone: String,
-    address: String,
-    icon: String, // Just adding this in case we want to add profile pictures
-    id_item: {
-        type: Schema.Types.ObjectId,
-        ref: 'Item'
-    }
+  firstName: String,
+  lastName: String,
+  profileImg: {type:String, default:''},
+  email: String,
+  city: String,
+  id_contact: {
+    type: Schema.Types.ObjectId,
+    ref: 'Contact',
+  },
+  id_item: {
+    type: Schema.Types.ObjectId,
+    ref: 'Item',
+  },
+  //   favorites: [
+  //     {
+  //       type: Schema.Types.ObjectId,
+  //       ref: 'Item',
+  //     },
+  //   ], if we have time
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
