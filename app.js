@@ -11,6 +11,15 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
+app.use(
+  require("node-sass-middleware")({
+    /* Options */
+    src: path.join(__dirname, "public"),
+    dest: path.join(__dirname, "public"),
+    sourceMap: true,
+  })
+);
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
