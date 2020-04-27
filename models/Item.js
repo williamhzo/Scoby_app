@@ -30,7 +30,6 @@ const itemSchema = new Schema({
     zipCode: String,
   },
   createdAt: { type: Date, default: Date.now },
-
   id_user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
