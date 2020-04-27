@@ -1,16 +1,26 @@
 <section class="form-section">
 
     <header class="form-section__header">
-        <h1>Welcome back 💙</h1>
+        <h1>Hello 👋</h1>
     </header>
 
-    <form class="form" method="POST" action="/login">
+    <form class="form" method="POST" action="/">
 
-        <h2>Log in</h2>
+        <h2>Create account</h2>
 
         {{#if errorMessage}}
         <p class="form__error">{{errorMessage}}</p>
         {{/if}}
+
+        <div class="form__input-group">
+            <label class="form__label" for="firstName" class="label-ref label">First name</label>
+            <input class="form__input" id="firstName" type="text" name="firstName">
+        </div>
+
+        <div class="form__input-group">
+            <label class="form__label" for="lastName">Last Name</label>
+            <input class="form__input" id="lastName" type="text" name="lastName">
+        </div>
 
         <div class="form__input-group">
             <label class="form__label" for="email">Email</label>
@@ -26,7 +36,7 @@
     </form>
 
     <div class="form-section__link">
-        <p>You don't have an account? </p><a href="/create-account">Create account</a>
+        <p>Already have an account? </p><a href="/login">Log in</a>
     </div>
 
 </section>

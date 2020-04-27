@@ -1,0 +1,60 @@
+<section class="form-section">
+
+    <header class="form-section__header">
+        <h1>Add item</h1>
+    </header>
+
+    <form action="/" method="POST" class="form" enctype="multipart/form-data">
+
+        {{#if errorMessage}}
+        <p class="form__error">{{errorMessage}}</p>
+        {{/if}}
+
+        <div class="form__input-group">
+            <label class="form__label" for="name" class="label-ref label">Name</label>
+            <input class="form__input" id="name" type="text" name="name" placeholder="What are you giving away?">
+        </div>
+
+        <div class="form__input-group">
+            <label class="form__label" for="category" class="label-ref label">Category</label>
+            <input class="form__input" id="category" type="text" name="category"
+                placeholder="What are you giving away?">
+        </div>
+
+        <div>
+            <label for="quantity">Quantity</label>
+            <input name="quantity" id="quantity" type="number" min="1">
+        </div>
+
+        <div>
+            <label for="address">Address</label>
+            <input name="address" id="address" type="string">
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <input name="description" id="description" type="text">
+        </div>
+
+        <div>
+            <label for="image">Image</label>
+            <button name="image" id="image" type="file"></button>
+        </div>
+
+
+        <h3>Contact information</h3>
+
+        <div>
+            <label for="contact">How do you want to be reached?</label>
+            <select name="contact" id="contact" class="select" required>
+                <option value="-1" disabled selected>Choose a preferred contact</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </div>
+
+        <button class="button-primary">Add item</button>
+    </form>
+
+    </div>
