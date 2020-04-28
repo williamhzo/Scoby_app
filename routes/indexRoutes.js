@@ -3,18 +3,18 @@ const router = express.Router();
 const Item = require('../models/Item');
 
 router.get('/', (req, res, next) => {
-  res.render('home')
+  res.render('home');
 });
 
-// Axios route 
+// Axios route
 router.get('/items', (req, res, next) => {
   Item.find()
-    .then(response => {
-      return res.send(response).json();
+    .then((response) => {
+      res.send(response);
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
-    })
-})
+    });
+});
 
 module.exports = router;
