@@ -14,3 +14,10 @@ const map = new mapboxgl.Map({
   center: [2.351027, 48.856669], //   [longitude,latitude]
   zoom: 12,
 });
+
+map.addControl(
+  new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+  })
+);

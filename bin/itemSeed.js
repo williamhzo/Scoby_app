@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 const mongoose = require("mongoose");
 const Item = require("../models/Item");
 
@@ -8,6 +8,12 @@ const items = [{
         description: "This one's most likely to turn big.",
         category: ["Plant"],
         quantity: 2,
+        address: "27 rue Lepic",
+        location: {
+            type: "Point",
+            coordinates: [48.885822, 2.33419],
+            zipCode: "75018",
+        },
     },
     {
         name: "Cactus",
@@ -15,6 +21,12 @@ const items = [{
         description: "Grow them at home",
         category: ["Plant"],
         quantity: 10,
+        address: "10 rue Saulnier",
+        location: {
+            type: "Point",
+            coordinates: [48.875177, 2.344565],
+            zipCode: "75010",
+        },
     },
     {
         name: "Kombucha",
@@ -22,23 +34,29 @@ const items = [{
         description: "A bit of fizz for your tastebuds",
         category: ["Kombucha"],
         quantity: 1,
-    }
-]
+        address: "197 avenue Edison",
+        location: {
+            type: "Point",
+            coordinates: [48.830003, 2.357773],
+            zipCode: "75013",
+        },
+    },
+];
 
 mongoose
     .connect(process.env.MONGO_URI)
     .then((self) => {
         console.log(`Connected to ${self.connection.name}`);
         Item.create(items)
-            .then(items => {
-                items.forEach(item => {
+            .then((items) => {
+                items.forEach((item) => {
                     console.log(item);
-                })
+                });
             })
-            .catch(dbErr => {
+            .catch((dbErr) => {
                 console.log(dbErr);
-            })
+            });
     })
-    .catch(dbErr => {
+    .catch((dbErr) => {
         console.log(dbErr);
     });
