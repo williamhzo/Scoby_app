@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Item = require("../models/Item");
+const Item = require('../models/Item');
 const uploadCloud = require('../config/cloudinary.js');
 
 // Add new item page
@@ -9,12 +9,12 @@ router.get('/add-item', (req, res, next) => {
 });
 
 // Create new item form
-router.post("/add-new-item", uploadCloud.single('photo'), (req, res, next) => {
+router.post('/add-new-item', uploadCloud.single('image'), (req, res, next) => {
   Item.create(req.body)
     .then((dbResult) => {
       Item.find({})
         .then((dbResult) => {
-          res.render("./items/itemForm", {
+          res.render('./items/itemForm', {
             items: dbResult,
           });
         })
