@@ -30,7 +30,7 @@ function getAllItems() {
       const items = response.data.map((item) => {
         return {
           type: 'Feature',
-          properties: {item.category},
+          properties: { category: response.data.category },
           geometry: {
             type: 'Point',
             coordinates: [
@@ -59,12 +59,12 @@ function loadAllItems(items) {
         },
       });
       map.addLayer({
-        id: 'symbols',
+        id: 'points',
         type: 'symbol',
-        source: 'points',
+        source: 'point',
         layout: {
           'icon-image': 'cat',
-          'icon-size': 0.2,
+          'icon-size': 0.25,
         },
       });
     }
