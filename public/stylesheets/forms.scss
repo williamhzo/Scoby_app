@@ -1,0 +1,38 @@
+$primary: #5663FF;
+
+.form-section {
+  max-width: 350px;
+  margin: 10vh auto 0;
+  padding: 0 20px;
+
+  .form-section__header {
+    text-align: center;
+  }
+
+  form {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: rgba(16, 35, 82, 0.02) 0 7px 50px 20px;
+
+    h2 {
+      margin-top: 0px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 30px;
+      background: $primary;
+      width: 100%;
+      color: white;
+      padding: 12px 0;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+
+  .form-section__link {
+    text-align: center;
+  }
+}
