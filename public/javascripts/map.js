@@ -24,21 +24,31 @@ map.addControl(
 
 map.on('load', function () {
   // get all items from db
-  // ...
+  function getItems() {}
 
   // load and display items on map
+  map.addSource('point', {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [0, 0], // insert coordinates from items in db
+          },
+        },
+      ],
+    },
+  });
   map.addLayer({
-    // {
-    //   type: 'Feature',
-    //   geometry: {
-    //     type: 'Point',
-    //     coordinates: [-122.413682, 37.775408]
-    //   },
-    //   properties: {
-    //     'marker-color': '#3bb2d0',
-    //     'marker-size': 'large',
-    //     'marker-symbol': 'rocket'
-    //   }
-    // }
+    id: 'points',
+    type: 'symbol',
+    source: 'point',
+    layout: {
+      'icon-image': 'cat',
+      'icon-size': 0.25,
+    },
   });
 });
