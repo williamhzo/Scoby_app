@@ -2,8 +2,14 @@
   <div id="logo"><a href="/">Scoby</a></div>
   <div class="top-nav-right">
     <ul class="auth-links">
+      {{#unless isLoggedIn}}
       <li><a href="/login">Log in</a></li>
       <li><a href="/create-account">Create account</a></li>
+      {{/unless}}
+      {{#if isLoggedIn}}
+      <li><a href="/logout">Log out</a></li>
+      <li><a href="/personal">{{user.firstName}}</a></li>
+      {{/if}}
     </ul>
     <div class="add-item-button"><a href="/add-item">Add item</a></div>
   </div>

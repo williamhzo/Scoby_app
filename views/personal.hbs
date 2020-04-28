@@ -1,0 +1,14 @@
+<img src="{{user.profileImg}}" alt="{{user.firstName}}">
+<p> {{user.firstName}} {{user.lastName}}</p>
+
+
+
+{{#each item}}
+<div>
+  <img src="{{this.image}}" alt="{{this.name}}">
+  <p>{{this.name}}</p>
+  <p>{{this.quantity}}</p>
+  <p>{{this.description}}</p>
+  <a href="/personal/{{this._id}}"><button>Delete</button>
+</div></a>
+{{/each}}
