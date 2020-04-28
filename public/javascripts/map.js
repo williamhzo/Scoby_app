@@ -18,55 +18,59 @@ map.addControl(
   })
 );
 
-// add a default marker
-const marker = new mapboxgl.Marker()
-  .setLngLat([2.351027, 48.856669]) // set coordinates
-  .addTo(map);
-
-// define function to retrieve all items and display them on the map
-map.on('load', async function () {
-  // get all items from db
-  await axios.get('/items')
-    .then(response => {
-      // console.log(response.data);
-      // console.log(response.data[0].location.coordinates);
-      const latitude = response.data[0].location.coordinates[0]
-      const longitude = response.data[0].location.coordinates[1]
-      console.log(latitude, longitude)
+async function getAllItems() {
+  await axios
+    .get('/items')
+    .then((response) => {
+      const items = response.data.map((item) => {
+        return {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [
+              item.location.coordinates[1],
+              item.location.coordinates[0],
+            ],
+          },
+        };
+      });
+      loadAllItems(items);
     })
-    .catch(error => {
-      console.log(error);
-    })
+    .catch((err) => console.log(err));
+}
 
-  // load and display items on map
-  map.addSource('point', {
-    type: 'geojson',
-    data: {
-      type: 'FeatureCollection',
-      features: [{
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [0, 0], // insert coordinates from items in db
+function loadAllItems(items) {
+  map.loadImage(
+    'https://upload.wikimedia.org/wikipedia/commons/7/7c/201408_cat.png',
+    function (error, image) {
+      if (error) throw error;
+      map.addImage('cat', image);
+      map.addSource('point', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: items,
         },
-      }, ],
-    },
-  });
-  map.addLayer({
-    id: 'points',
-    type: 'symbol',
-    source: 'point',
-    layout: {
-      'icon-image': 'cat',
-      'icon-size': 0.25,
-    },
-  });
-});
+      });
+      map.addLayer({
+        id: 'points',
+        type: 'symbol',
+        source: 'point',
+        layout: {
+          'icon-image': 'cat',
+          'icon-size': 0.25,
+        },
+      });
+    }
+  );
+}
+
+getAllItems();
 
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
 map.on('click', 'symbols', function (e) {
   map.flyTo({
-    center: e.features[0].geometry.coordinates
+    center: e.features[0].geometry.coordinates,
   });
 });
 
