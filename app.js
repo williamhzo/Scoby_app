@@ -43,7 +43,7 @@ app.use(
   session({
     secret: process.env.SESSION_SECRET,
     cookie: {
-      maxAge: 60000,
+      maxAge: 30 * 24 * 60 * 60 * 1000
     },
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
@@ -76,8 +76,11 @@ app.use((req, res, next) => {
 // ROUTES CONFIG
 const indexRouter = require("./routes/indexRoutes");
 const authRouter = require("./routes/authRoutes");
+const itemRouter = require("./routes/itemRoutes");
 app.use("/", indexRouter);
 app.use("/", authRouter);
+app.use("/", itemRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

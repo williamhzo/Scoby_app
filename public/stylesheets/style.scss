@@ -15,69 +15,70 @@ body {
   height: 90vh;
 }
 
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media (min-width: 320px) {
-  .main {
-    height: 100vh;
+
+  .top-nav {
+    width: 100vw;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-between;
 
-    .top-nav {
-      width: 100vw;
-      display: flex;
-      justify-content: space-between;
+    #logo {
+      font-size: 30px;
+      font-weight: 600;
+      margin: 20px;
 
-      #logo {
-        font-size: 30px;
-        font-weight: 600;
-        margin: 20px;
-
-        a {
-          text-decoration: none;
-          color: black;
-        }
+      a {
+        text-decoration: none;
+        color: black;
       }
+    }
 
-      .top-nav-right {
-        width: 40%;
+    .top-nav-right {
+      width: 40%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .auth-links {
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
 
-        .auth-links {
-          display: flex;
+        li {
+          list-style: none;
+          margin: 0 20px;
+          font-weight: 600;
 
-          li {
-            list-style: none;
-            margin: 0 20px;
-            font-weight: 600;
-
-            a {
-              text-decoration: none;
-              color: black;
-            }
+          a {
+            text-decoration: none;
+            color: black;
           }
         }
+      }
 
-        .add-item-button a {
-          padding: 10px;
-          border-radius: 10px;
-          text-decoration: none;
-          color: lime;
-          background-color: black;
-        }
+      .add-item-button a {
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: lime;
+        background-color: black;
       }
     }
+  }
 
-    #shroom {
-      font-size: 100px;
-    }
+  #shroom {
+    font-size: 100px;
+  }
 
-    #about {
-      width: auto;
-      font-weight: 600;
-      margin-bottom: 30px;
-    }
+  #about {
+    width: auto;
+    font-weight: 600;
+    margin-bottom: 30px;
   }
 }

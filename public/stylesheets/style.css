@@ -11,49 +11,50 @@ body {
   margin: 0 auto;
   height: 90vh; }
 
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+
 @media (min-width: 320px) {
-  .main {
-    height: 100vh;
+  .top-nav {
+    width: 100vw;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-between; }
-    .main .top-nav {
-      width: 100vw;
-      display: flex;
-      justify-content: space-between; }
-      .main .top-nav #logo {
-        font-size: 30px;
-        font-weight: 600;
-        margin: 20px; }
-        .main .top-nav #logo a {
-          text-decoration: none;
-          color: black; }
-      .main .top-nav .top-nav-right {
-        width: 40%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center; }
-        .main .top-nav .top-nav-right .auth-links {
-          display: flex; }
-          .main .top-nav .top-nav-right .auth-links li {
-            list-style: none;
-            margin: 0 20px;
-            font-weight: 600; }
-            .main .top-nav .top-nav-right .auth-links li a {
-              text-decoration: none;
-              color: black; }
-        .main .top-nav .top-nav-right .add-item-button a {
-          padding: 10px;
-          border-radius: 10px;
-          text-decoration: none;
-          color: lime;
-          background-color: black; }
-    .main #shroom {
-      font-size: 100px; }
-    .main #about {
-      width: auto;
+    .top-nav #logo {
+      font-size: 30px;
       font-weight: 600;
-      margin-bottom: 30px; } }
+      margin: 20px; }
+      .top-nav #logo a {
+        text-decoration: none;
+        color: black; }
+    .top-nav .top-nav-right {
+      width: 40%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center; }
+      .top-nav .top-nav-right .auth-links {
+        display: flex; }
+        .top-nav .top-nav-right .auth-links li {
+          list-style: none;
+          margin: 0 20px;
+          font-weight: 600; }
+          .top-nav .top-nav-right .auth-links li a {
+            text-decoration: none;
+            color: black; }
+      .top-nav .top-nav-right .add-item-button a {
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: lime;
+        background-color: black; }
+  #shroom {
+    font-size: 100px; }
+  #about {
+    width: auto;
+    font-weight: 600;
+    margin-bottom: 30px; } }
 
 /*# sourceMappingURL=style.css.map */
