@@ -10,7 +10,9 @@ const map = new mapboxgl.Map({
   zoom: 12,
 });
 
-// add control location search field to map --> to be implemented in 'add item' form?
+// add geocoder location search field to map --> to be implemented in 'add item' form?
+// add zoom and rotation controls to the map
+// add geolocation to controls
 map
   .addControl(
     new MapboxGeocoder({
@@ -31,17 +33,23 @@ map
     })
   );
 
-// Add zoom and rotation controls to the map.
-// map.addControl(new mapboxgl.NavigationControl());
-
 function getAllItems() {
   axios
     .get('/items')
     .then((response) => {
+      console.log(response.data);
       const items = response.data.map((item) => {
         return {
           type: 'Feature',
-          properties: { category: response.data.category },
+          properties: {
+            name: item.name,
+            category: item.category,
+            description: item.description,
+            quantity: item.quantity,
+            address: item.address,
+            image: item.image,
+            creation_date: item.createdAt,
+          },
           geometry: {
             type: 'Point',
             coordinates: [
