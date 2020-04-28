@@ -10,7 +10,7 @@ const logger = require("morgan");
 const session = require("express-session");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
-
+const flash = require("connect-flash");
 const app = express();
 
 // SASS SETUP
@@ -32,18 +32,11 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(
   express.urlencoded({
-    extended: false,
+    extended: true,
   })
 );
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
-// ROUTES CONFIG
-const indexRouter = require("./routes/indexRoutes");
-const authRouter = require("./routes/authRoutes");
-
-app.use("/", indexRouter);
-app.use("/", authRouter);
 
 // SESSION SETUP
 app.use(
@@ -60,6 +53,31 @@ app.use(
     resave: true,
   })
 );
+
+// SESSION
+app.use((req, res, next) => {
+  if (req.session.currentUser) {
+    res.locals.user = req.session.currentUser
+    res.locals.isLoggedIn = true;
+  } else {
+    res.locals.isLoggedIn = false;
+  }
+  next();
+});
+
+// FLASH
+app.use(flash());
+app.use((req, res, next) => {
+  // res.locals.success_msg = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
+
+// ROUTES CONFIG
+const indexRouter = require("./routes/indexRoutes");
+const authRouter = require("./routes/authRoutes");
+app.use("/", indexRouter);
+app.use("/", authRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

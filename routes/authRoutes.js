@@ -6,10 +6,12 @@ const bcryptSalt = 10;
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
+// Create Account Page
 router.get('/create-account', (req, res, next) => {
   res.render('./auth/createAccount.hbs');
 });
 
+// Create Account Form
 router.post("/create-account", async (req, res, next) => {
   const {
     email,
@@ -23,11 +25,7 @@ router.post("/create-account", async (req, res, next) => {
       email: email
     });
     if (foundUser) {
-      // req.flash("error", "Email already taken");
-      // req.session.errorMessage = {
-      //   status: 401,
-      //   text: "Email already taken."
-      // };
+      req.flash("error", "Email already taken");
       return res.redirect("/create-account");
     }
     const salt = 10;
@@ -44,8 +42,35 @@ router.post("/create-account", async (req, res, next) => {
   }
 });
 
+// Log in Page
 router.get('/login', (req, res, next) => {
   res.render('./auth/login.hbs');
+});
+
+// Log in Form
+router.post("/login", async (req, res, next) => {
+  const {
+    email,
+    password
+  } = req.body;
+  try {
+    const foundUser = await User.findOne({
+      email
+    });
+    if (!foundUser) {
+      req.flash("error", "Invalid credentials (no user)");
+      return res.redirect("/login");
+    }
+    if (!bcrypt.compareSync(password, foundUser.password)) {
+      // req.flash("error", "Invalid credentials");
+      req.flash("error", "Invalid credentials (wrong password)");
+      return res.redirect("/login");
+    }
+    req.session.currentUser = foundUser;
+    res.redirect("/");
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;
