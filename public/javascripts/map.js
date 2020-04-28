@@ -23,42 +23,51 @@ const marker = new mapboxgl.Marker()
   .setLngLat([2.351027, 48.856669]) // set coordinates
   .addTo(map);
 
-
 // define function to retrieve all items and display them on the map
-// map.on('load', function () {
+map.on('load', async function () {
   // get all items from db
-  // function getItems() {}
+  await axios.get('/items')
+    .then(response => {
+      // console.log(response.data);
+      // console.log(response.data[0].location.coordinates);
+      const latitude = response.data[0].location.coordinates[0]
+      const longitude = response.data[0].location.coordinates[1]
+      console.log(latitude, longitude)
+    })
+    .catch(error => {
+      console.log(error);
+    })
 
   // load and display items on map
-//   map.addSource('point', {
-//     type: 'geojson',
-//     data: {
-//       type: 'FeatureCollection',
-//       features: [
-//         {
-//           type: 'Feature',
-//           geometry: {
-//             type: 'Point',
-//             coordinates: [0, 0], // insert coordinates from items in db
-//           },
-//         },
-//       ],
-//     },
-//   });
-//   map.addLayer({
-//     id: 'points',
-//     type: 'symbol',
-//     source: 'point',
-//     layout: {
-//       'icon-image': 'cat',
-//       'icon-size': 0.25,
-//     },
-//   });
-// });
+  map.addSource('point', {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: [{
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [0, 0], // insert coordinates from items in db
+        },
+      }, ],
+    },
+  });
+  map.addLayer({
+    id: 'points',
+    type: 'symbol',
+    source: 'point',
+    layout: {
+      'icon-image': 'cat',
+      'icon-size': 0.25,
+    },
+  });
+});
 
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
 map.on('click', 'symbols', function (e) {
-  map.flyTo({ center: e.features[0].geometry.coordinates });
+  map.flyTo({
+    center: e.features[0].geometry.coordinates
+  });
 });
 
 // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
