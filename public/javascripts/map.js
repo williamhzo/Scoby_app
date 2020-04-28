@@ -11,12 +11,17 @@ const map = new mapboxgl.Map({
 });
 
 // add control location search field to map --> to be implemented in 'add item' form?
-map.addControl(
-  new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl,
-  })
-);
+map
+  .addControl(
+    new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+    })
+  )
+  .addControl(new mapboxgl.NavigationControl());
+
+// Add zoom and rotation controls to the map.
+// map.addControl(new mapboxgl.NavigationControl());
 
 function getAllItems() {
   axios
@@ -25,6 +30,7 @@ function getAllItems() {
       const items = response.data.map((item) => {
         return {
           type: 'Feature',
+          properties: {item.category},
           geometry: {
             type: 'Point',
             coordinates: [
@@ -53,12 +59,12 @@ function loadAllItems(items) {
         },
       });
       map.addLayer({
-        id: 'points',
+        id: 'symbols',
         type: 'symbol',
-        source: 'point',
+        source: 'points',
         layout: {
           'icon-image': 'cat',
-          'icon-size': 0.25,
+          'icon-size': 0.2,
         },
       });
     }
