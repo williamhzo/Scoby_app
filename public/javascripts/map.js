@@ -18,6 +18,27 @@ const map = new mapboxgl.Map({
 map.addControl(
   new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
+    mapboxgl: mapboxgl,
   })
 );
+
+map.on('load', function () {
+  // get all items from db
+  // ...
+
+  // load and display items on map
+  map.addLayer({
+    // {
+    //   type: 'Feature',
+    //   geometry: {
+    //     type: 'Point',
+    //     coordinates: [-122.413682, 37.775408]
+    //   },
+    //   properties: {
+    //     'marker-color': '#3bb2d0',
+    //     'marker-size': 'large',
+    //     'marker-symbol': 'rocket'
+    //   }
+    // }
+  });
+});
