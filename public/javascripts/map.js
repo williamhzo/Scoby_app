@@ -16,9 +16,20 @@ map
     new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl,
+      marker: {
+        color: 'green',
+      },
     })
   )
-  .addControl(new mapboxgl.NavigationControl());
+  .addControl(new mapboxgl.NavigationControl())
+  .addControl(
+    new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true,
+      },
+      trackUserLocation: true,
+    })
+  );
 
 // Add zoom and rotation controls to the map.
 // map.addControl(new mapboxgl.NavigationControl());
