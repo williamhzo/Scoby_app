@@ -1,13 +1,8 @@
-// require('dotenv').config();
-
-// mapboxgl.accessToken =
-//   'pk.eyJ1Ijoid2lsbGlhbWh6byIsImEiOiJjazlpaXFtMmowM2Z1M2Vxc2thY3dxOHFoIn0.hpSIzole5o67JqS1A7lp3A';
-
-// mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
-
+// map box token
 mapboxgl.accessToken =
   'pk.eyJ1Ijoid2lsbGlhbWh6byIsImEiOiJjazlpaXFtMmowM2Z1M2Vxc2thY3dxOHFoIn0.hpSIzole5o67JqS1A7lp3A';
 
+// create map
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/williamhzo/ck9ijqka14hy61ip1yja423sl',
@@ -15,6 +10,7 @@ const map = new mapboxgl.Map({
   zoom: 12,
 });
 
+// add control location search field to map --> to be implemented in 'add item' form?
 map.addControl(
   new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
@@ -22,6 +18,12 @@ map.addControl(
   })
 );
 
+// add a default marker
+const marker = new mapboxgl.Marker()
+  .setLngLat([2.351027, 48.856669]) // set coordinates
+  .addTo(map);
+
+// define function to retrieve all items and display them on the map
 map.on('load', function () {
   // get all items from db
   function getItems() {}
