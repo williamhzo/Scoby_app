@@ -1,0 +1,56 @@
+<section class="form-section">
+
+  <form class="form edit__profile" method="POST" action="/update-account" enctype="multipart/form-data">
+
+    <h2>Edit profile</h2>
+
+    {{#if error}}
+    <p class="form__error">{{error}}</p>
+    {{/if}}
+
+    <div class="round__image user__image"><img src="{{user.profileImg}}" alt="{{user.firstName}}"></div>
+    <div class="form__input-group">
+
+      <label class="form__label" for="image" class="label-ref label">Change profile image</label>
+      <input class="form__input" id="image" type="file" name="profileImg">
+    </div>
+
+    <div class="form__input-group">
+      <label class="form__label" for="firstName" class="label-ref label">First name</label>
+      <input class="form__input" id="firstName" type="text" name="firstName" value="{{user.firstName}}">
+    </div>
+
+    <div class="form__input-group">
+      <label class="form__label" for="lastName">Last Name</label>
+      <input class="form__input" id="lastName" type="text" name="lastName" value="{{user.lastName}}">
+    </div>
+
+    <div class="form__input-group">
+      <label class="form__label" for="email">Email</label>
+      <input class="form__input" id="email" type="email" name="email" value="{{user.email}}" disabled>
+    </div>
+
+    <div class=" form__input-group">
+      <label class="form__label" for="password">Password</label>
+      <input class="form__input" id="password" type="password" name="password" value="{{user.email}}" disabled>
+    </div>
+
+    <button class="form__button" type="submit">Save</button>
+  </form>
+
+  <form class="form edit__phoneNumber" method="POST" action="/update-phoneNumber">
+
+    <h2>Edit phone number</h2>
+
+    {{#if error}}
+    <p class="form__error">{{error}}</p>
+    {{/if}}
+
+    <div class="form__input-group">
+      <label class="form__label" for="phoneNumber" class="label-ref label">Phone number</label>
+      <input class="form__input" id="phoneNumber" type="text" name="phoneNumber" value="{{contact.0.phoneNumber}}">
+    </div>
+    <button class="form__button" type="submit">Save</button>
+  </form>
+
+</section>
