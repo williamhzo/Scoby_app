@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const requireAuth = require("../middlewares/requireAuth");
 const Item = require('../models/Item');
 const Contact = require('../models/Contact');
 const uploadCloud = require('../config/cloudinary.js');
@@ -10,7 +11,7 @@ const uploadCloud = require('../config/cloudinary.js');
 // });
 
 // Add new item page
-router.get('/add-item', (req, res, next) => {
+router.get('/add-item', requireAuth, (req, res, next) => {
   Contact.find({
       id_user: res.locals.user._id
     })
@@ -27,7 +28,7 @@ router.get('/add-item', (req, res, next) => {
 
 
 // Create new item form
-router.post('/add-new-item', uploadCloud.single('image'), (req, res, next) => {
+router.post('/add-new-item', requireAuth, uploadCloud.single('image'), (req, res, next) => {
   const id_user = res.locals.user._id;
   const image = req.file.secure_url;
   Item.create({
@@ -52,7 +53,7 @@ router.post('/add-new-item', uploadCloud.single('image'), (req, res, next) => {
 });
 
 
-router.post('/add-contact', (req, res, next) => {
+router.post('/add-contact', requireAuth, (req, res, next) => {
   const id_user = res.locals.user._id;
   Contact.create({
       ...req.body,
@@ -74,7 +75,7 @@ router.post('/add-contact', (req, res, next) => {
 
 
 
-router.get('/personal', (req, res, next) => {
+router.get('/personal', requireAuth, (req, res, next) => {
   Promise.all([Item.find({
       id_user: res.locals.user._id
     }), Contact.find({
@@ -89,7 +90,7 @@ router.get('/personal', (req, res, next) => {
     .catch(next);
 });
 
-router.get('/personal/delete/:id', (req, res, next) => {
+router.get('/personal/delete/:id', requireAuth, (req, res, next) => {
   Item.findByIdAndDelete(req.params.id)
     .then(() => {
       res.redirect('/personal');
