@@ -89,38 +89,3 @@ function loadAllItems(items) {
 }
 
 getAllItems();
-
-// Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
-map.on('click', 'Point', (e) => {
-  console.log('hey');
-  map.flyTo({
-    center: e.features[0].geometry.coordinates,
-  });
-});
-
-// previous way of updating map with data
-// function loadAllItems(items) {
-//   map.loadImage(
-//     'https://upload.wikimedia.org/wikipedia/commons/7/7c/201408_cat.png',
-//     function (error, image) {
-//       if (error) throw error;
-//       map.addImage('cat', image);
-//       map.addSource('point', {
-//         type: 'geojson',
-//         data: {
-//           type: 'FeatureCollection',
-//           features: items,
-//         },
-//       });
-//       map.addLayer({
-//         id: 'points',
-//         type: 'symbol',
-//         source: 'point',
-//         layout: {
-//           'icon-image': 'cat',
-//           'icon-size': 0.25,
-//         },
-//       });
-//     }
-//   );
-// }
