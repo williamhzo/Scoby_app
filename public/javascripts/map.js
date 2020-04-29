@@ -85,13 +85,14 @@ function loadAllItems(items) {
         )
       )
       .addTo(map);
+    marker.onclick = map.flyTo({ center: marker.geometry.coordinates });
   });
 }
 
 getAllItems();
 
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
-map.on('click', 'symbol', function (e) {
+map.on('click', 'marker', (e) => {
   map.flyTo({
     center: e.features[0].geometry.coordinates,
   });
