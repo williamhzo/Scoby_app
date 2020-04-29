@@ -5,7 +5,8 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background: #f8f9fd; }
+  background: #f8f9fd;
+  overflow: hidden; }
 
 h1 {
   font-size: 2.2rem; }
@@ -57,7 +58,10 @@ h5 {
 .nav-bar {
   width: 100vw;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  line-height: 70px; }
   .nav-bar a {
     text-decoration: none;
     color: black; }
@@ -65,8 +69,11 @@ h5 {
     list-style: none; }
   .nav-bar__hamburger {
     font-size: 1.6rem;
-    margin: 0 1.2rem 0 0;
-    display: none; }
+    margin: 0 2rem 0 0;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0; }
   .nav-bar__toggle {
     display: none; }
   .nav-bar__logo {
@@ -77,40 +84,47 @@ h5 {
     z-index: 1; }
   .nav-bar__nav-items {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     z-index: 1;
-    margin-right: 20px; }
+    max-height: 70px; }
   .nav-bar__links {
     display: flex; }
-    .nav-bar__links li {
-      margin: 0 1rem;
-      font-weight: 600; }
   .nav-bar__link {
     font-size: 1.2rem;
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     font-weight: 600; }
   .nav-bar .add-item-button a {
     font-size: 1.2rem;
-    padding: 10px;
     border-radius: 10px;
-    text-decoration: none;
-    color: lime;
-    background-color: black; }
+    text-decoration: none; }
+  .nav-bar .nav-bar__link svg {
+    margin-right: 0.5rem;
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    position: relative;
+    top: 0.3rem; }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .nav-bar__hamburger {
     display: block;
     cursor: pointer; }
   .nav-bar__links {
     display: none;
-    text-align: center;
-    width: 30%; }
+    text-align: right;
+    margin: 2rem 5rem 0 0;
+    width: 100%; }
   .nav-bar__link {
     display: block;
-    margin: 1rem; }
+    height: 2rem;
+    margin-top: 2rem; }
+  .nav-bar__nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0; }
   #toggle:checked + .nav-bar__links {
-    animation: 2s fadeInRight 1s;
+    animation: 0.5s fadeInRight;
     display: block; } }
 
 @keyframes fadeInRight {
@@ -122,5 +136,13 @@ h5 {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); } }
 
 /*# sourceMappingURL=style.css.map */
