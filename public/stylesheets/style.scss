@@ -6,7 +6,6 @@ $primary: #5663ff;
 html,
 body {
   font-family: "Manrope", sans-serif;
-  font-size: 10px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -14,23 +13,23 @@ body {
 }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 2.6rem;
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
 }
 
 h4 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 h5 {
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 
 // Map display test
@@ -56,7 +55,7 @@ h5 {
   &__about {
     position: absolute;
     bottom: 20px;
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 600;
     z-index: 1;
   }
@@ -90,11 +89,21 @@ h5 {
     list-style: none;
   }
 
+  &__label {
+    margin: 0 40px 0 0;
+    font-size: 2.6rem;
+    display: none;
+  }
+
+  &__toggle {
+    display: none;
+  }
+
   &__logo {
-    font-size: 3rem;
+    font-size: 2.2rem;
     font-weight: 600;
     margin: 20px;
-    text-shadow: 2px 2px 2px lime;
+    text-shadow: 2px 2px 2px grey;
     z-index: 1;
   }
 
@@ -110,19 +119,19 @@ h5 {
     display: flex;
 
     li {
-      margin: 0 2rem;
+      margin: 0 1rem;
       font-weight: 600;
     }
   }
 
   &__link {
-    font-size: 1.5rem;
-    margin: 0 1.5rem;
+    font-size: 1.2rem;
+    margin: 0 1rem;
     font-weight: 600;
   }
 
   .add-item-button a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 10px;
     border-radius: 10px;
     text-decoration: none;
