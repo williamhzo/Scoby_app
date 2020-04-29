@@ -1,9 +1,19 @@
 $primary: #5663FF;
 
 .form-section {
-  max-width: 350px;
+  max-width: 450px;
   margin: 10vh auto 0;
   padding: 0 20px;
+
+  .form__error {
+    background-color: #F6DBD1;
+    padding: 15px;
+    width: 94%;
+    border-radius: 10px;
+    color: #D84A29;
+    font-size: 14px;
+    font-weight: 600;
+  }
 
   .form-section__header {
     text-align: center;
@@ -15,6 +25,23 @@ $primary: #5663FF;
     border-radius: 20px;
     box-shadow: rgba(16, 35, 82, 0.02) 0 7px 50px 20px;
 
+    .form__input {
+      margin: 8px 0 12px;
+      width: 95%;
+      border-radius: 4px;
+      display: block;
+      border: none;
+      font-size: 14px;
+      background: #FBFBFD;
+      padding: 12px 12px;
+    }
+
+
+    .form__label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
     h2 {
       margin-top: 0px;
       text-align: center;
@@ -25,7 +52,7 @@ $primary: #5663FF;
       background: $primary;
       width: 100%;
       color: white;
-      padding: 12px 0;
+      padding: 16px 0;
       font-size: 16px;
       border-radius: 10px;
       border: none;
