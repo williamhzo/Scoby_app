@@ -38,7 +38,6 @@ function getAllItems() {
   axios
     .get('/items')
     .then((response) => {
-      console.log(response.data);
       const items = response.data.map((item) => {
         return {
           type: 'Feature',
@@ -92,7 +91,8 @@ function loadAllItems(items) {
 getAllItems();
 
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
-map.on('click', 'marker', (e) => {
+map.on('click', 'Point', (e) => {
+  console.log('hey');
   map.flyTo({
     center: e.features[0].geometry.coordinates,
   });
