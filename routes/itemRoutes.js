@@ -56,13 +56,17 @@ router.post('/add-contact', (req, res, next) => {
 });
 
 
+
 router.get('/personal', (req, res, next) => {
-  Item.find({
-      id_user: res.locals.user._id,
-    })
-    .then((item) => {
+  Promise.all([Item.find({
+      id_user: res.locals.user._id
+    }), Contact.find({
+      id_user: res.locals.user._id
+    })])
+    .then((result) => {
       res.render('personal', {
-        item: item,
+        item: result[0],
+        contact: result[1],
       });
     })
     .catch(next);
