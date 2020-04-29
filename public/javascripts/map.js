@@ -14,15 +14,15 @@ const map = new mapboxgl.Map({
 // add zoom and rotation controls to the map
 // add geolocation to controls
 map
-  // .addControl(
-  //   new MapboxGeocoder({
-  //     accessToken: mapboxgl.accessToken,
-  //     mapboxgl: mapboxgl,
-  //     marker: {
-  //       color: 'green',
-  //     },
-  //   })
-  // )
+  .addControl(
+    new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+      marker: {
+        color: 'green',
+      },
+    })
+  )
   .addControl(new mapboxgl.NavigationControl())
   .addControl(
     new mapboxgl.GeolocateControl({
@@ -65,29 +65,13 @@ function getAllItems() {
 }
 
 function loadAllItems(items) {
-  map.loadImage(
-    'https://upload.wikimedia.org/wikipedia/commons/7/7c/201408_cat.png',
-    function (error, image) {
-      if (error) throw error;
-      map.addImage('cat', image);
-      map.addSource('point', {
-        type: 'geojson',
-        data: {
-          type: 'FeatureCollection',
-          features: items,
-        },
-      });
-      map.addLayer({
-        id: 'points',
-        type: 'symbol',
-        source: 'point',
-        layout: {
-          'icon-image': 'cat',
-          'icon-size': 0.25,
-        },
-      });
-    }
-  );
+  items.forEach((marker) => {
+    const marker__container = document.createElement('div');
+    marker__container.className = 'marker';
+    new mapboxgl.Marker(marker__container)
+      .setLngLat(marker.geometry.coordinates)
+      .addTo(map);
+  });
 }
 
 getAllItems();
@@ -108,3 +92,30 @@ map.on('mouseenter', 'symbol', function () {
 map.on('mouseleave', 'symbol', function () {
   map.getCanvas().style.cursor = '';
 });
+
+// previous way of updating map with data
+// function loadAllItems(items) {
+//   map.loadImage(
+//     'https://upload.wikimedia.org/wikipedia/commons/7/7c/201408_cat.png',
+//     function (error, image) {
+//       if (error) throw error;
+//       map.addImage('cat', image);
+//       map.addSource('point', {
+//         type: 'geojson',
+//         data: {
+//           type: 'FeatureCollection',
+//           features: items,
+//         },
+//       });
+//       map.addLayer({
+//         id: 'points',
+//         type: 'symbol',
+//         source: 'point',
+//         layout: {
+//           'icon-image': 'cat',
+//           'icon-size': 0.25,
+//         },
+//       });
+//     }
+//   );
+// }
