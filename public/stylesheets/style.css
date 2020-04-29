@@ -5,7 +5,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background: #F8F9FD; }
+  background: #f8f9fd; }
 
 h1 {
   font-size: 36px; }
@@ -28,12 +28,22 @@ h5 {
   flex-direction: column;
   align-items: center;
   justify-content: space-between; }
-  .home .home_svg {
+  .home .home__svg {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); }
   .home .home__map {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     height: 90vh; }
+  .home .marker {
+    background-image: url("../media/marker.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); }
+  .home .mapboxgl-popup {
+    max-width: 200px; }
 
 @media (min-width: 320px) {
   .top-nav {

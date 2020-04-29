@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
-$background: #F8F9FD;
-$primary: #5663FF;
-
+$background: #f8f9fd;
+$primary: #5663ff;
 
 html,
 body {
@@ -42,23 +41,21 @@ h5 {
   align-items: center;
   justify-content: space-between;
 
-  .home_svg {
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-  }
-
   .home__map {
     width: 100%;
     margin: 0 auto;
     height: 90vh;
   }
 
-  #marker {
+  .marker {
     background-image: url('../media/marker.svg');
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
+      brightness(118%) contrast(119%);
   }
 
   .mapboxgl-popup {
@@ -67,7 +64,6 @@ h5 {
 }
 
 @media (min-width: 320px) {
-
   .top-nav {
     width: 100vw;
     display: flex;
