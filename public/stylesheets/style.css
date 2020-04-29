@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 html,
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 10px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background: #f8f9fd; }
+  background: #f8f9fd;
+  overflow: hidden; }
 
 h1 {
   font-size: 3.6rem; }
@@ -22,13 +23,6 @@ h4 {
 
 h5 {
   font-size: 1.6rem; }
-
-a {
-  text-decoration: none;
-  color: black; }
-
-li {
-  list-style: none; }
 
 .home {
   width: 100%;
@@ -66,10 +60,16 @@ li {
   width: 100vw;
   display: flex;
   justify-content: space-between; }
+  .nav-bar a {
+    text-decoration: none;
+    color: black; }
+  .nav-bar li {
+    list-style: none; }
   .nav-bar__logo {
     font-size: 3rem;
     font-weight: 600;
     margin: 20px;
+    text-shadow: 2px 2px 2px lime;
     z-index: 1; }
   .nav-bar__nav-items {
     display: flex;

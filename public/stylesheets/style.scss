@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 $background: #f8f9fd;
 $primary: #5663ff;
 
 html,
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 10px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   background: $background;
+  overflow: hidden;
 }
 
 h1 {
@@ -62,13 +63,14 @@ h5 {
   }
 
   .marker {
-    background-image: url("../media/marker.svg");
+    background-image: url('../media/marker.svg');
     background-position: center center;
     background-repeat: no-repeat;
     width: 40px;
     height: 40px;
     cursor: pointer;
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
+      brightness(118%) contrast(119%);
   }
 
   .mapboxgl-popup {
