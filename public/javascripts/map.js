@@ -10,6 +10,8 @@ const map = new mapboxgl.Map({
   zoom: 12,
 });
 
+const itemInfo = document.querySelector('.info-card__container');
+
 // add geocoder location search field to map --> to be implemented in 'add item' form?
 // add zoom and rotation controls to the map
 // add geolocation to controls
@@ -35,34 +37,32 @@ map
   );
 
 function getAllItems() {
-  axios
-    .get('/items')
-    .then((response) => {
-      const items = response.data.map((item) => {
-        return {
-          type: 'Feature',
-          properties: {
-            name: item.name,
-            category: item.category,
-            description: item.description,
-            quantity: item.quantity,
-            address: item.address,
-            image: item.image,
-            creation_date: item.createdAt,
-            user: item.id_user,
-          },
-          geometry: {
-            type: 'Point',
-            coordinates: [
-              item.location.coordinates[1],
-              item.location.coordinates[0],
-            ],
-          },
-        };
-      });
-      loadAllItems(items);
-    })
-    .catch((err) => console.log(err));
+  axios.get('/items').then((response) => {
+    const items = response.data.map((item) => {
+      return {
+        type: 'Feature',
+        properties: {
+          name: item.name,
+          category: item.category,
+          description: item.description,
+          quantity: item.quantity,
+          address: item.address,
+          image: item.image,
+          creation_date: item.createdAt,
+          user: item.id_user,
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [
+            item.location.coordinates[1],
+            item.location.coordinates[0],
+          ],
+        },
+      };
+    });
+    loadAllItems(items);
+  });
+  // .catch((err) => console.log(err));
 }
 
 function loadAllItems(items) {
@@ -74,26 +74,43 @@ function loadAllItems(items) {
     // if (category)
     new mapboxgl.Marker(marker__container)
       .setLngLat(marker.geometry.coordinates)
-      .setPopup(
-        new mapboxgl.Popup({ offset: 25 }).setHTML(
-          `<h3> 
-              ${marker.properties.name} 
-            </h3>
-            <p> 
-              ${marker.properties.category} 
-            </p>
-            <p> 
-              ${marker.properties.description} 
-            </p>
-            <p> 
-              ${marker.properties.user} 
-            </p>
-            <a>Contact</a>
-            <img src='${marker.properties.image}'></img>`
-        )
-      )
+      // .setPopup(
+      //   new mapboxgl.Popup({ offset: 25 }).setHTML(
+      //     `<h3>
+      //         ${marker.properties.name}
+      //       </h3>
+      //       <p>
+      //         ${marker.properties.category}
+      //       </p>
+      //       <p>
+      //         ${marker.properties.description}
+      //       </p>
+      //       <p>
+      //         ${marker.properties.user}
+      //       </p>
+      //       <a>Contact</a>
+      //       <img src='${marker.properties.image}'></img>`
+      //   )
+      // )
       .addTo(map);
+
+    marker__container.addEventListener('click', () => {
+      itemInfo.style.visibility = 'visible';
+      itemInfo.innerHTML = `
+        <h3 class='.info-card__title'>${marker.properties.name}</h3>
+        <p class='.info-card__text'>${marker.properties.category}</p>
+        <p class='.info-card__text'>${marker.properties.description}</p>
+        <p class='.info-card__text'>${marker.properties.user}</p>
+        <a class='.info-card__btn' href='' >Contact</a>
+        <img class='info-card__img' src='${marker.properties.image}'></img>`;
+    });
   });
 }
 
+//onclick event handler
+
 getAllItems();
+
+document.querySelector('.mapboxgl-canvas').addEventListener('click', () => {
+  itemInfo.style.visibility = 'hidden';
+});
