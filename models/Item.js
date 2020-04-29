@@ -43,7 +43,6 @@ const itemSchema = new mongoose.Schema({
 
 // geocode middleware
 itemSchema.pre('save', async function (next) {
-  console.log("hey i'm here");
   const loc = await geocoder.geocode(this.address);
   this.location = {
     type: 'Point',
