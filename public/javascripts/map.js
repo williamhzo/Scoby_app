@@ -5,7 +5,7 @@ mapboxgl.accessToken =
 // create map
 const map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/williamhzo/ck9ijqka14hy61ip1yja423sl',
+  style: 'mapbox://styles/williamhzo/ck9l3pl0s26xd1irzartpvnm2',
   center: [2.351027, 48.856669], //   [longitude,latitude]
   zoom: 12,
 });
@@ -23,14 +23,14 @@ map
   //     },
   //   })
   // )
-  .addControl(new mapboxgl.NavigationControl())
+  .addControl(new mapboxgl.NavigationControl(), 'bottom-right')
   .addControl(
     new mapboxgl.GeolocateControl({
       positionOptions: {
         enableHighAccuracy: true,
       },
       trackUserLocation: true,
-    })
+    }), 'bottom-right'
   );
 
 function getAllItems() {

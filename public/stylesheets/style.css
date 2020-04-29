@@ -1,77 +1,97 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 html,
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background: #F8F9FD; }
+  background: #f8f9fd; }
 
 h1 {
-  font-size: 36px; }
+  font-size: 3.6rem; }
 
 h2 {
-  font-size: 28px; }
+  font-size: 2.8rem; }
 
 h3 {
-  font-size: 22px; }
+  font-size: 2.2rem; }
 
 h4 {
-  font-size: 18px; }
+  font-size: 1.8rem; }
 
 h5 {
-  font-size: 16px; }
+  font-size: 1.6rem; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+li {
+  list-style: none; }
 
 .home {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; }
-  .home .home_svg {
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); }
-  .home .home__map {
-    width: 70%;
-    margin: 0 auto;
-    height: 90vh; }
-
-@media (min-width: 320px) {
-  .top-nav {
-    width: 100vw;
-    display: flex;
-    justify-content: space-between; }
-    .top-nav #logo {
-      font-size: 30px;
-      font-weight: 600;
-      margin: 20px; }
-      .top-nav #logo a {
-        text-decoration: none;
-        color: black; }
-    .top-nav .top-nav-right {
-      width: 40%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center; }
-      .top-nav .top-nav-right .auth-links {
-        display: flex; }
-        .top-nav .top-nav-right .auth-links li {
-          list-style: none;
-          margin: 0 20px;
-          font-weight: 600; }
-          .top-nav .top-nav-right .auth-links li a {
-            text-decoration: none;
-            color: black; }
-      .top-nav .top-nav-right .add-item-button a {
-        padding: 10px;
-        border-radius: 10px;
-        text-decoration: none;
-        color: lime;
-        background-color: black; }
-  #shroom {
-    font-size: 100px; }
-  #about {
-    width: auto;
+  justify-content: space-between;
+  z-index: 0; }
+  .home__svg {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    z-index: 1; }
+  .home__map {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 0; }
+  .home__about {
+    position: absolute;
+    bottom: 20px;
+    font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 30px; } }
+    z-index: 1; }
+  .home #marker {
+    background-image: url("../media/marker.svg");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer; }
+  .home .mapboxgl-popup {
+    max-width: 200px; }
+
+.nav-bar {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between; }
+  .nav-bar__logo {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 20px;
+    z-index: 1; }
+  .nav-bar__nav-items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+    margin-right: 20px; }
+    .nav-bar__nav-items .nav-items__links {
+      display: flex; }
+      .nav-bar__nav-items .nav-items__links .links__list {
+        margin: 0 2rem;
+        font-weight: 600; }
+      .nav-bar__nav-items .nav-items__links .links__link {
+        font-size: 1.5rem;
+        margin: 0 1.5rem;
+        font-weight: 600; }
+    .nav-bar__nav-items .links__list--add-item-button a {
+      font-size: 1.5rem;
+      padding: 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: lime;
+      background-color: black; }
 
 /*# sourceMappingURL=style.css.map */
