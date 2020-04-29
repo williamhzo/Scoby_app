@@ -30,7 +30,8 @@ map
         enableHighAccuracy: true,
       },
       trackUserLocation: true,
-    }), 'bottom-right'
+    }),
+    'bottom-right'
   );
 
 function getAllItems() {
@@ -85,7 +86,6 @@ function loadAllItems(items) {
         )
       )
       .addTo(map);
-    marker.onclick = map.flyTo({ center: marker.geometry.coordinates });
   });
 }
 
