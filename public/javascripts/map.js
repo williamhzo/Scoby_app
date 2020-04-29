@@ -70,6 +70,20 @@ function loadAllItems(items) {
     marker__container.className = 'marker';
     new mapboxgl.Marker(marker__container)
       .setLngLat(marker.geometry.coordinates)
+      .setPopup(
+        new mapboxgl.Popup({ offset: 25 }).setHTML(
+          `<h3> 
+              ${marker.properties.name} 
+            </h3>
+            <p> 
+              ${marker.properties.category} 
+            </p>
+            <p> 
+              ${marker.properties.description} 
+            </p>
+            <img src='${marker.properties.image}'></img>`
+        )
+      )
       .addTo(map);
   });
 }
@@ -81,16 +95,6 @@ map.on('click', 'symbol', function (e) {
   map.flyTo({
     center: e.features[0].geometry.coordinates,
   });
-});
-
-// Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
-map.on('mouseenter', 'symbol', function () {
-  map.getCanvas().style.cursor = 'pointer';
-});
-
-// Change it back to a pointer when it leaves.
-map.on('mouseleave', 'symbol', function () {
-  map.getCanvas().style.cursor = '';
 });
 
 // previous way of updating map with data
