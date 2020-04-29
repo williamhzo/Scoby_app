@@ -6,17 +6,15 @@ const itemSchema = new Schema({
   name: String,
   image: {
     type: String,
-    default:
-      'https://cdn1.iconfinder.com/data/icons/gardening-filled-line/614/1935_-_Growing_Plant-512.png',
+    default: 'https://cdn1.iconfinder.com/data/icons/gardening-filled-line/614/1935_-_Growing_Plant-512.png',
   },
   description: String,
-  category: [
-    {
-      type: String,
-      enum: ['Plant', 'Kombucha', 'Kefir', 'Vinegar'],
-    },
-  ],
+  category: [{
+    type: String,
+    enum: ['Plant', 'Kombucha', 'Kefir', 'Vinegar'],
+  }, ],
   quantity: Number,
+  contact: String,
   address: String,
   location: {
     type: {
@@ -29,7 +27,10 @@ const itemSchema = new Schema({
     },
     zipCode: String,
   },
-  createdAt: { type: Date, default: Date.now },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
   id_user: {
     type: Schema.Types.ObjectId,
     ref: 'User',

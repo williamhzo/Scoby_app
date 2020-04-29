@@ -51,13 +51,21 @@
 
         <div class="form__input-group">
             <label class="form__label" for="contact">How do you want to be reached?</label>
-            <select name="contact" id="contact" class="form__select" required>
+
+            <div>
+                <input type="radio" name="contact" value="{{user.email}}">{{user.email}}</div>
+
+            {{#if contact}}
+            <input type="radio" name="contact" value="{{contact}}">{{contact.0.phoneNumber}}
+            {{/if}}
+        </div>
+        {{!-- <select name="contact" id="contact" class="form__select" required>
                 <option value="-1" disabled selected>Choose a preferred contact</option>
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
-            </select>
-            <p><a href="">add phone number</a></p>
+            </select> --}}
+        <p>Add a phone number in your personal page</p>
         </div>
 
         <button class="form__button" type="submit">Add item</button>

@@ -5,9 +5,26 @@ const Contact = require('../models/Contact');
 const uploadCloud = require('../config/cloudinary.js');
 
 // Add new item page
+// router.get('/add-item', (req, res, next) => {
+//   res.render('./items/itemForm');
+// });
+
+// Add new item page
 router.get('/add-item', (req, res, next) => {
-  res.render('./items/itemForm');
+  Contact.find({
+      id_user: res.locals.user._id
+    })
+    .then((dbresult) => {
+      console.log(dbresult)
+      console.log(dbresult.phoneNumber)
+      res.render('./items/itemForm', {
+        contact: dbresult
+      });
+    })
+    .catch(next)
 });
+
+
 
 // Create new item form
 router.post('/add-new-item', uploadCloud.single('image'), (req, res, next) => {
