@@ -33,15 +33,6 @@ h5 {
   font-size: 1.6rem;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-li {
-  list-style: none;
-}
-
 // Map display test
 
 .home {
@@ -77,8 +68,7 @@ li {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
-      brightness(118%) contrast(119%);
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
   }
 
   .mapboxgl-popup {
@@ -91,10 +81,20 @@ li {
   display: flex;
   justify-content: space-between;
 
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  li {
+    list-style: none;
+  }
+
   &__logo {
     font-size: 3rem;
     font-weight: 600;
     margin: 20px;
+    text-shadow: 2px 2px 2px lime;
     z-index: 1;
   }
 
