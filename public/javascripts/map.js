@@ -49,6 +49,7 @@ function getAllItems() {
             address: item.address,
             image: item.image,
             creation_date: item.createdAt,
+            user: item.id_user,
           },
           geometry: {
             type: 'Point',
@@ -68,6 +69,9 @@ function loadAllItems(items) {
   items.forEach((marker) => {
     const marker__container = document.createElement('div');
     marker__container.className = 'marker';
+    // marker__container.className = 'marker-plant';
+    // marker__container.className = 'marker-mushroom';
+    // if (category)
     new mapboxgl.Marker(marker__container)
       .setLngLat(marker.geometry.coordinates)
       .setPopup(
@@ -81,6 +85,10 @@ function loadAllItems(items) {
             <p> 
               ${marker.properties.description} 
             </p>
+            <p> 
+              ${marker.properties.user} 
+            </p>
+            <a>Contact</a>
             <img src='${marker.properties.image}'></img>`
         )
       )
