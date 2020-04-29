@@ -4,7 +4,7 @@ const User = require('./User');
 
 const contactSchema = new Schema({
   id_user: {
-    type: Schema.User.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'User',
   },
   email: String, //optional: if user provides another contact email

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Item = require('../models/Item');
+const Contact = require('../models/Contact');
 const uploadCloud = require('../config/cloudinary.js');
 
 // Add new item page
@@ -32,6 +33,28 @@ router.post('/add-new-item', uploadCloud.single('image'), (req, res, next) => {
       console.log(err);
     });
 });
+
+
+router.post('/add-contact', (req, res, next) => {
+  const id_user = res.locals.user._id;
+  Contact.create({
+      ...req.body,
+      id_user
+    })
+    .then((dbResult) => {
+      Contact.find({})
+        .then((dbResult) => {
+          res.redirect('/personal')
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 
 router.get('/personal', (req, res, next) => {
   Item.find({
