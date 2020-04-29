@@ -1,0 +1,66 @@
+.personal-section {
+  max-width: 800px;
+  margin: 10vh auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; }
+  .personal-section .user__image {
+    margin: 0px auto; }
+  .personal-section .round__image {
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    overflow: hidden;
+    position: relative; }
+    .personal-section .round__image img {
+      position: absolute;
+      width: auto;
+      height: 100%; }
+  .personal-section .user__presentation {
+    text-align: center; }
+  .personal-section .stack {
+    margin-top: 50px; }
+    .personal-section .stack .stack__item {
+      display: flex;
+      padding: 20px 40px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      max-width: 800px;
+      margin-bottom: 20px;
+      border-radius: 10px; }
+      .personal-section .stack .stack__item .round__image {
+        height: 200px;
+        width: 200px; }
+      .personal-section .stack .stack__item .stack__item__description {
+        flex: 2;
+        margin-right: 30px;
+        text-align: center; }
+        .personal-section .stack .stack__item .stack__item__description h2 {
+          margin: 10px 0; }
+        .personal-section .stack .stack__item .stack__item__description h4 {
+          margin: 5px 0;
+          font-weight: 400; }
+      .personal-section .stack .stack__item .stack__item__buttons {
+        display: flex; }
+        .personal-section .stack .stack__item .stack__item__buttons button {
+          padding: 12px 20px;
+          margin-right: 10px;
+          border-radius: 10px;
+          color: #5663FF;
+          background: transparent;
+          border: 1px solid #5663FF;
+          font-size: 16px; }
+    .personal-section .stack h3 {
+      text-align: center; }
+    @media (min-width: 480px) {
+      .personal-section .stack .stack__item {
+        flex-direction: row-reverse; }
+        .personal-section .stack .stack__item .stack__item__description {
+          flex: 2;
+          margin-right: 30px;
+          text-align: left; } }
+
+/*# sourceMappingURL=personalPage.css.map */

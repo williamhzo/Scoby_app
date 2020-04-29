@@ -7,7 +7,7 @@ const userSchema = new Schema({
   lastName: String,
   profileImg: {
     type: String,
-    default: 'https://cdn3.iconfinder.com/data/icons/education-science-vol-1-outline/512/raise_hand_students_class-512.png'
+    default: '/media/avatar.png'
   },
   email: String,
   password: String,

@@ -1,14 +1,36 @@
-<img src="{{user.profileImg}}" alt="{{user.firstName}}">
-<p> {{user.firstName}} {{user.lastName}}</p>
+<section class="personal-section">
 
+  <div class="round__image user__image"><img src="{{user.profileImg}}" alt="{{user.firstName}}"></div>
+  <div class="user__presentation">
+    <h2>{{user.firstName}} {{user.lastName}}</h2>
+    <a href="/personal/edit-profile">Edit profile</a></a>
+  </div>
 
+  {{#unless item}}
+  <div class="stack">
+    <p>You don't have any items :(</p>
+    <a href="/add-item"><button>Add item to give away</button></a>
+  </div>
+  {{/unless}}
 
-{{#each item}}
-<div>
-  <img src="{{this.image}}" alt="{{this.name}}">
-  <p>{{this.name}}</p>
-  <p>{{this.quantity}}</p>
-  <p>{{this.description}}</p>
-  <a href="/personal/{{this._id}}"><button>Delete</button>
-</div></a>
-{{/each}}
+  {{#if item}}
+  <div class="stack">
+    <h3>Your items</h3>
+    {{#each item}}
+    <div class="stack__item">
+      <div class="round__image"><img src="{{this.image}}" alt="{{this.name}}"></div>
+      <div class="stack__item__description">
+        <h2>{{this.name}}</h2>
+        <h4>Quantity: {{this.quantity}}</h4>
+        <p>{{this.description}}</p>
+        <div class="stack__item__buttons">
+          <a href="/personal/delete/{{this._id}}"><button>Delete</button></a>
+          <a href="/personal/{{this._id}}"><button>Edit</button></a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+</section>
