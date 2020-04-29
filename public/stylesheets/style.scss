@@ -34,21 +34,35 @@ h5 {
 }
 
 // Map display test
-#map {
-  width: 70%;
-  margin: 0 auto;
-  height: 90vh;
-}
 
-.main {
+.home {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
-  .green {
+  .home_svg {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+  }
+
+  .home__map {
+    width: 100%;
+    margin: 0 auto;
+    height: 90vh;
+  }
+
+  #marker {
+    background-image: url('../media/marker.svg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup {
+    max-width: 200px;
   }
 }
 

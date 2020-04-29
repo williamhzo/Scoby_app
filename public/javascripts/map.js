@@ -14,15 +14,15 @@ const map = new mapboxgl.Map({
 // add zoom and rotation controls to the map
 // add geolocation to controls
 map
-  .addControl(
-    new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl,
-      marker: {
-        color: 'green',
-      },
-    })
-  )
+  // .addControl(
+  //   new MapboxGeocoder({
+  //     accessToken: mapboxgl.accessToken,
+  //     mapboxgl: mapboxgl,
+  //     marker: {
+  //       color: 'green',
+  //     },
+  //   })
+  // )
   .addControl(new mapboxgl.NavigationControl())
   .addControl(
     new mapboxgl.GeolocateControl({
