@@ -6,27 +6,25 @@
     <a href="/personal/edit-profile">Edit profile</a></a>
   </div>
 
+  {{#unless contact}}
   <div class="use__contact">
-    <h3>How do you prefer to be reached?</h3>
-    <select name="id_tags" id="tags" class="select">
-      <option value="-1" selected>{{user.email}}</option>
-      {{#each contact}}
-      <option value="{{this._id}}">{{this.phoneNumber}}</option>
-      {{/each}}
-    </select>
+    <h4>Add a phone number</h4>
     <form action="/add-contact" method="POST" class="form">
 
       <div class="form__input-group">
         <label class="form__label" for="phoneNumber" class="label-ref label">Phone number</label>
-        <input class="form__input" id="phoneNumber" type="text" name="phoneNumber" placeholder="Add phoneNumber">
+        <input class="form__input" id="phoneNumber" type="text" name="phoneNumber" placeholder="Add phone number">
       </div>
       <button class="form__button" type="submit">Add phone number</button>
     </form>
   </div>
+  {{/unless}}
 
   {{#unless item}}
-  <div class="stack">
+  <div class="stack__empty__state">
+    <div class=""><img src="/media/personal-page-empty-state.svg" alt=""></div>
     <p>You don't have any items :(</p>
+
     <a href="/add-item"><button>Add item to give away</button></a>
   </div>
   {{/unless}}
