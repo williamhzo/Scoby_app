@@ -3,7 +3,7 @@
   <div class="round__image user__image"><img src="{{user.profileImg}}" alt="{{user.firstName}}"></div>
   <div class="user__presentation">
     <h2>{{user.firstName}} {{user.lastName}}</h2>
-    <a href="/personal/edit-profile">Edit profile</a></a>
+    <a href="/personal/edit-profile/{{user._id}}">Edit profile</a></a>
   </div>
 
   {{#unless contact}}

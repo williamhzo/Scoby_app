@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 $background: #f8f9fd;
 $primary: #5663ff;
@@ -62,7 +62,7 @@ h5 {
   }
 
   .marker {
-    background-image: url("../media/marker.svg");
+    background-image: url('../media/marker.svg');
     background-position: center center;
     background-repeat: no-repeat;
     width: 40px;
@@ -137,7 +137,7 @@ h5 {
     border-radius: 10px;
     text-decoration: none;
   }
-
+  
   .nav-bar__link svg {
     margin-right: 0.5rem;
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)

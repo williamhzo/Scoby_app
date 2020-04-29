@@ -77,9 +77,11 @@ app.use((req, res, next) => {
 const indexRouter = require("./routes/indexRoutes");
 const authRouter = require("./routes/authRoutes");
 const itemRouter = require("./routes/itemRoutes");
+const personalRouter = require("./routes/personalRoutes");
 app.use("/", indexRouter);
 app.use("/", authRouter);
 app.use("/", itemRouter);
+app.use("/", personalRouter);
 
 
 // catch 404 and forward to error handler
