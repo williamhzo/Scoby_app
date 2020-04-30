@@ -111,7 +111,6 @@ function loadAllItems(items) {
 
 getAllItems();
 
-document.querySelector('.mapboxgl-canvas').addEventListener('click', () => {
-  itemInfo.style.visibility = 'hidden';
-  document.querySelectorAll('.marker--active').className = 'marker--purple';
-});
+// document.querySelector('.mapboxgl-canvas').addEventListener('click', () => {
+//   itemInfo.style.visibility = 'hidden';
+// });
