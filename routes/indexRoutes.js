@@ -9,8 +9,10 @@ router.get('/', (req, res, next) => {
 // Axios route
 router.get('/items', (req, res, next) => {
   Item.find()
+    .populate('id_user')
     .then((response) => {
       res.send(response);
+      console.log('response after populate:', response);
     })
     .catch((error) => {
       console.log(error);
@@ -23,4 +25,4 @@ module.exports = router;
 
 router.get('/about', (req, res, next) => {
   res.render('about');
-})
+});
