@@ -82,7 +82,6 @@ function loadAllItems(items) {
       .addTo(map);
 
     marker__container.addEventListener('click', () => {
-      marker__container.className = 'marker--active';
       itemInfo.style.visibility = 'visible';
       itemInfo.innerHTML = `
       <a class="closeLink">Close</a>
@@ -103,7 +102,6 @@ function loadAllItems(items) {
 
       document.querySelector('.closeLink').addEventListener('click', () => {
         itemInfo.style.visibility = 'hidden';
-        marker__container.className = 'marker--purple';
       });
     });
   });
