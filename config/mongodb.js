@@ -10,5 +10,5 @@ mongoose
         console.log(`Connected to ${self.connection.name}`);
     })
     .catch((err) => {
-        console.log(`An error occured while connecting to the database...`);
+        console.log(`An error occurred while connecting to the database...`);
     });
