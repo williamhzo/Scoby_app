@@ -63,16 +63,16 @@ function loadAllItems(items) {
     // marker__container.className = 'marker-plant';
     // marker__container.className = 'marker-mushroom';
 
-    // if (category)
-
-    // switch (cat){
-    //   case ''
-    // }
-
-    // marker__plant
-    // marker__kombucha
-    // marker__vinegar
-    // marker__kefir
+    switch (marker.properties.category) {
+      case 'Plant':
+        marker__container.className = 'marker__plant';
+      case 'Kombucha':
+        marker__container.className = 'marker__kombucha';
+      case 'Kefir':
+        marker__container.className = 'marker__vinegar';
+      case 'Vinegar':
+        marker__container.className = 'marker__kefir';
+    }
 
     new mapboxgl.Marker(marker__container)
       .setLngLat(marker.geometry.coordinates)
