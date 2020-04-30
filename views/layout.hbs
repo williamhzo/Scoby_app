@@ -7,6 +7,7 @@
   <title>{{title}}</title>
   {{!-- frontend js --}}
   <script defer src="javascripts/map.js"></script>
+  <script defer src="javascripts/autocomplete.js"></script>
   {{!-- mapbox --}}
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
@@ -16,6 +17,11 @@
   <link rel='stylesheet' href='/stylesheets/personalPage.css' />
   {{!-- axios --}}
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  {{!-- Google Maps JavaScript API --}}
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOOfJblSU03tvwu5qZAIsSrv7qmVwL3RQ&libraries=places&callback=initAutocomplete"
+    async defer></script>
 
   {{!-- fontAwesome --}}
   {{!-- <script src="https://kit.fontawesome.com/6241f32aae.js" crossorigin="anonymous"></script> --}}
