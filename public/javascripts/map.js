@@ -12,19 +12,7 @@ const map = new mapboxgl.Map({
 
 const itemInfo = document.querySelector('.info-card__container');
 
-// add geocoder location search field to map --> to be implemented in 'add item' form?
-// add zoom and rotation controls to the map
-// add geolocation to controls
 map
-  // .addControl(
-  //   new MapboxGeocoder({
-  //     accessToken: mapboxgl.accessToken,
-  //     mapboxgl: mapboxgl,
-  //     marker: {
-  //       color: 'green',
-  //     },
-  //   })
-  // )
   .addControl(new mapboxgl.NavigationControl(), 'bottom-right')
   .addControl(
     new mapboxgl.GeolocateControl({
@@ -64,7 +52,7 @@ function getAllItems() {
     });
     loadAllItems(items);
   });
-  // .catch((err) => console.log(err));
+  .catch((err) => console.log(err));
 }
 
 function loadAllItems(items) {
@@ -74,26 +62,14 @@ function loadAllItems(items) {
     // marker__container.className = 'marker-plant';
     // marker__container.className = 'marker-mushroom';
     // if (category)
+
+    // marker__plant
+    // marker__kombucha
+    // marker__vinegar
+    // marker__kefir
+
     new mapboxgl.Marker(marker__container)
       .setLngLat(marker.geometry.coordinates)
-      // .setPopup(
-      //   new mapboxgl.Popup({ offset: 25 }).setHTML(
-      //     `<h3>
-      //         ${marker.properties.name}
-      //       </h3>
-      //       <p>
-      //         ${marker.properties.category}
-      //       </p>
-      //       <p>
-      //         ${marker.properties.description}
-      //       </p>
-      //       <p>
-      //         ${marker.properties.user}
-      //       </p>
-      //       <a>Contact</a>
-      //       <img src='${marker.properties.image}'></img>`
-      //   )
-      // )
       .addTo(map);
 
     marker__container.addEventListener('click', () => {
@@ -110,8 +86,6 @@ function loadAllItems(items) {
     });
   });
 }
-
-//onclick event handler
 
 getAllItems();
 
