@@ -12,56 +12,62 @@ const map = new mapboxgl.Map({
 
 const itemInfo = document.querySelector('.info-card__container');
 
-map
-  .addControl(new mapboxgl.NavigationControl(), 'bottom-right')
-  .addControl(
-    new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true,
-      },
-      trackUserLocation: true,
-    }),
-    'bottom-right'
-  );
+map.addControl(new mapboxgl.NavigationControl(), 'bottom-right').addControl(
+  new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true,
+    },
+    trackUserLocation: true,
+  }),
+  'bottom-right'
+);
 
 function getAllItems() {
-  axios.get('/items').then((response) => {
-    const items = response.data.map((item) => {
-      return {
-        type: 'Feature',
-        properties: {
-          name: item.name,
-          category: item.category,
-          description: item.description,
-          quantity: item.quantity,
-          address: item.address,
-          image: item.image,
-          creation_date: item.createdAt,
-          userName: item.id_user.firstName,
-          userImg: item.id_user.profileImg,
-          contact: item.contact,
-        },
-        geometry: {
-          type: 'Point',
-          coordinates: [
-            item.location.coordinates[0],
-            item.location.coordinates[1],
-          ],
-        },
-      };
-    });
-    loadAllItems(items);
-  });
-  .catch((err) => console.log(err));
+  axios
+    .get('/items')
+    .then((response) => {
+      const items = response.data.map((item) => {
+        return {
+          type: 'Feature',
+          properties: {
+            name: item.name,
+            category: item.category,
+            description: item.description,
+            quantity: item.quantity,
+            address: item.address,
+            image: item.image,
+            creation_date: item.createdAt,
+            userName: item.id_user.firstName,
+            userImg: item.id_user.profileImg,
+            contact: item.contact,
+          },
+          geometry: {
+            type: 'Point',
+            coordinates: [
+              item.location.coordinates[0],
+              item.location.coordinates[1],
+            ],
+          },
+        };
+      });
+      loadAllItems(items);
+    })
+    .catch((err) => console.log(err));
 }
 
 function loadAllItems(items) {
   items.forEach((marker) => {
     const marker__container = document.createElement('div');
+
     marker__container.className = 'marker';
     // marker__container.className = 'marker-plant';
     // marker__container.className = 'marker-mushroom';
+
     // if (category)
+
+    // switch (cat){
+    //   case ''
+    // }
 
     // marker__plant
     // marker__kombucha
