@@ -106,7 +106,7 @@ function loadAllItems(items) {
         <p class='.info-card__text'>${marker.properties.userName}</p>
         <img src='${marker.properties.userImg}'></img>;
         <a class='.info-card__btn' href='' >Contact</a>
-        <img class='info-card__img' src='${marker.properties.image}'></img>`;
+        <img class='info-card__UserImg' src='${marker.properties.image}'></img>`;
     });
   });
 }
