@@ -1,0 +1,117 @@
+$primary: #5663FF;
+
+
+.info-card {
+  &__container {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    left: 25px;
+    top: 0px;
+    box-shadow: 0 0 50px lightgrey;
+    border-radius: 20px;
+    background-color: white;
+    width: 400px;
+    padding: 25px;
+    margin: 75px auto;
+    z-index: 100;
+
+    a {
+      visibility: hidden;
+    }
+
+    .round__image {
+      height: 150px;
+      width: 150px;
+      border-radius: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto 10px;
+
+      img {
+        position: absolute;
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .round__image__user {
+      height: 30px;
+      width: 30px;
+      border-radius: 100%;
+      overflow: hidden;
+      position: relative;
+      margin-right: 10px;
+
+      img {
+        position: absolute;
+        width: auto;
+        height: 100%;
+
+      }
+    }
+
+    h2 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .info-card__info {
+      margin: 10px auto;
+    }
+
+    .info-card__info span {
+      display: inline;
+      margin: 5px 5px;
+    }
+
+    .user__info {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact__information {
+      text-align: center;
+      margin-top: 20px;
+      background: #F1F2FF;
+      padding: 15px;
+      width: 94%;
+      border-radius: 10px;
+      color: $primary;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+
+  .info-card {
+    &__container {
+      visibility: hidden;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      top: 0%;
+      box-shadow: 0 0 50px lightgrey;
+      border-radius: 20px;
+      background-color: white;
+      width: 300px;
+      padding: 25px;
+      margin: 75px auto;
+      z-index: 100;
+
+      a {
+        visibility: visible;
+        text-align: end;
+      }
+    }
+
+  }
+}
