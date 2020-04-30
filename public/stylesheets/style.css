@@ -54,7 +54,33 @@ h5 {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); }
+    z-index: 1; }
+  .home .purple {
+    background-image: url("../media/marker-purple.svg"); }
+  .home .marker__plant {
+    background-image: url("../media/plant.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%; }
+  .home .marker__kombucha {
+    background-image: url("../media/kombucha.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 90%;
+    width: 100%; }
+  .home .marker__vinegar {
+    background-image: url("../media/vinegar.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%; }
+  .home .marker__kefir {
+    background-image: url("../media/kefir.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%; }
 
 .about__container {
   width: 550px;
