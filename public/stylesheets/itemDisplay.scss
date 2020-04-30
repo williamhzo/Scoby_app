@@ -16,6 +16,8 @@ $primary: #5663ff;
     padding: 25px;
     margin: 75px auto;
     z-index: 100;
+    overflow-y: auto;
+    max-height: 75vh;
 
     .closeLink {
       position: absolute;
@@ -45,8 +47,8 @@ $primary: #5663ff;
     }
 
     .round__image__user {
-      height: 30px;
-      width: 30px;
+      min-height: 30px;
+      min-width: 30px;
       border-radius: 100%;
       overflow: hidden;
       position: relative;

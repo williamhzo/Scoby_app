@@ -5,7 +5,8 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background: #f8f9fd; }
+  background: #f8f9fd;
+  overflow: hidden; }
 
 h1 {
   font-size: 2.2rem; }
@@ -46,7 +47,7 @@ h5 {
     .home__about a {
       text-decoration: none;
       color: black; }
-  .home .marker {
+  .home .marker--active {
     background-image: url("../media/marker.svg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -62,6 +63,8 @@ h5 {
     height: 40px;
     cursor: pointer;
     z-index: 1; }
+  .home .marker--purple:active {
+    background-image: url("../media/marker.svg"); }
   .home .marker__plant {
     background-image: url("../media/plant.svg");
     background-position: center center;
