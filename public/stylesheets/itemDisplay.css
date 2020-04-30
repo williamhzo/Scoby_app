@@ -75,9 +75,6 @@
     width: 300px;
     padding: 25px;
     margin: 75px auto;
-    z-index: 100; }
-    .info-card__container .closeLink {
-      visibility: hidden;
-      text-align: end; } }
+    z-index: 100; } }
 
 /*# sourceMappingURL=itemDisplay.css.map */
