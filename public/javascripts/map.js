@@ -44,8 +44,8 @@ function getAllItems() {
         geometry: {
           type: 'Point',
           coordinates: [
-            item.location.coordinates[1],
             item.location.coordinates[0],
+            item.location.coordinates[1],
           ],
         },
       };

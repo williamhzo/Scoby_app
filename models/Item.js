@@ -7,16 +7,13 @@ const itemSchema = new Schema({
   name: String,
   image: {
     type: String,
-    default:
-      'https://cdn1.iconfinder.com/data/icons/gardening-filled-line/614/1935_-_Growing_Plant-512.png',
+    default: 'https://cdn1.iconfinder.com/data/icons/gardening-filled-line/614/1935_-_Growing_Plant-512.png',
   },
   description: String,
-  category: [
-    {
-      type: String,
-      enum: ['Plant', 'Kombucha', 'Kefir', 'Vinegar'],
-    },
-  ],
+  category: [{
+    type: String,
+    enum: ['Plant', 'Kombucha', 'Kefir', 'Vinegar'],
+  }, ],
   quantity: Number,
   contact: String,
   address: String,
@@ -46,7 +43,7 @@ itemSchema.pre('save', async function (next) {
   const loc = await geocoder.geocode(this.address);
   this.location = {
     type: 'Point',
-    coordinates: [loc[0].latitude, loc[0].longitude],
+    coordinates: [loc[0].longitude, loc[0].latitude],
     formattedAddress: loc[0].formattedAddress,
   };
   next();
