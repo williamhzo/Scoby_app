@@ -84,14 +84,22 @@ function loadAllItems(items) {
     marker__container.addEventListener('click', () => {
       itemInfo.style.visibility = 'visible';
       itemInfo.innerHTML = `
-        <h3 class='.info-card__title'>${marker.properties.name}</h3>
-        <p class='.info-card__text'>${marker.properties.category}</p>
-        <p class='.info-card__text'>${marker.properties.description}</p>
-        <p class='.info-card__text'>${marker.properties.contact}</p>
-        <p class='.info-card__text'>${marker.properties.userName}</p>
-        <img src='${marker.properties.userImg}'></img>;
-        <a class='.info-card__btn' href='' >Contact</a>
-        <img class='info-card__UserImg' src='${marker.properties.image}'></img>`;
+      <a>Close</a>
+      <div class="round__image"><img class='info-card__UserImg' src='${marker.properties.image}'></img></div>
+     
+      <h2 class='info-card__title'>${marker.properties.name}</h2>
+      <div class="info-card__info">
+      <span>Quantity: ${marker.properties.quantity}</span> |
+      
+        <span>${marker.properties.category} </span></div>
+        <p class=''>${marker.properties.description}</p>
+        <div class="user__info">
+        <div class="round__image__user">
+        <img src='${marker.properties.userImg}'></img></div>
+        <span>Given away by ${marker.properties.userName}</span></div>
+        <div class="contact__information">Contact ${marker.properties.userName} at <b>${marker.properties.contact}</b></div>
+        
+        `
     });
   });
 }
