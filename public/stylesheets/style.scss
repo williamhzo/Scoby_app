@@ -10,7 +10,7 @@ body {
   padding: 0;
   margin: 0;
   background: $background;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 h1 {
@@ -125,7 +125,6 @@ h5 {
   padding: 0 20px;
 }
 
-
 .nav-bar {
   width: 100vw;
   display: flex;
@@ -196,7 +195,31 @@ h5 {
   }
 }
 
+.add-item__container {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  right: 25px;
+  top: 0px;
+  box-shadow: 0 0 50px lightgrey;
+  border-radius: 20px;
+  background-color: $background;
+  min-width: 200px;
+  max-width: 30%;
+  padding: 25px;
+  margin: 75px auto;
+  z-index: 100;
+  animation: 0.5s fadeInRight;
+}
+
 @media (max-width: 768px) {
+  .home {
+    width: 100%;
+    height: 100vh;
+  }
+
   .nav-bar__hamburger {
     display: block;
     cursor: pointer;
@@ -231,25 +254,11 @@ h5 {
     animation: 0.5s fadeInRight;
     display: block;
   }
+
 }
 
-.add-item__container {
-  visibility: hidden;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  right: 25px;
-  top: 0px;
-  box-shadow: 0 0 50px lightgrey;
-  border-radius: 20px;
-  background-color: $background;
-  min-width: 200px;
-  max-width: 30%;
-  padding: 25px;
-  margin: 75px auto;
-  z-index: 100;
-  animation: 0.5s fadeInRight;
+.is-visible {
+  visibility: visible;
 }
 
 .back-button {
