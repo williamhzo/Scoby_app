@@ -10,7 +10,7 @@ body {
   padding: 0;
   margin: 0;
   background: $background;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 h1 {
@@ -276,6 +276,18 @@ h5 {
   margin: 75px auto;
   z-index: 100;
   animation: 0.5s fadeInRight;
+}
+
+.back-button {
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  img {
+    height: 10px;
+    margin-right: 10px;
+  }
 }
 
 @keyframes fadeInRight {
