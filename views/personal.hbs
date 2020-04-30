@@ -1,3 +1,5 @@
+<div class="add-item__container">{{> itemFormPartial}}</div>
+
 <section class="personal-section">
 
   <div class="round__image user__image"><img src="{{user.profileImg}}" alt="{{user.firstName}}"></div>
@@ -24,8 +26,6 @@
   <div class="stack__empty__state">
     <div class=""><img src="/media/personal-page-empty-state.svg" alt=""></div>
     <p>You don't have any items :(</p>
-
-    <a href="/add-item"><button>Add item to give away</button></a>
   </div>
   {{/unless}}
 
