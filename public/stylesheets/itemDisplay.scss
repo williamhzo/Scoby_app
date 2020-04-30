@@ -107,11 +107,10 @@ $primary: #5663FF;
       margin: 75px auto;
       z-index: 100;
 
-      a {
-        visibility: visible;
-        text-align: end;
-      }
+      // .closeLink {
+      //   visibility: hidden;
+      //   text-align: end;
+      // }
     }
-
   }
 }

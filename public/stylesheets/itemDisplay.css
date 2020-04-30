@@ -76,8 +76,8 @@
     padding: 25px;
     margin: 75px auto;
     z-index: 100; }
-    .info-card__container a {
-      visibility: visible;
+    .info-card__container .closeLink {
+      visibility: hidden;
       text-align: end; } }
 
 /*# sourceMappingURL=itemDisplay.css.map */
