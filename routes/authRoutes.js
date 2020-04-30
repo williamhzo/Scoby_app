@@ -30,12 +30,13 @@ router.post("/create-account", async (req, res, next) => {
     }
     const salt = 10;
     const hashedPassword = bcrypt.hashSync(password, salt);
-    await User.create({
+    const newUser = await User.create({
       firstName,
       email,
       lastName,
       password: hashedPassword,
     });
+    req.session.currentUser = newUser;
     res.redirect("/");
   } catch (err) {
     next(err);
