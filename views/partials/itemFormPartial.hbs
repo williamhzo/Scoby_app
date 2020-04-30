@@ -4,7 +4,7 @@
         <h1>Add item</h1>
     </header>
 
-    <form action="/add-new-item" method="POST" class="form" enctype="multipart/form-data">
+    <form action="/" method="POST" class="form" enctype="multipart/form-data">
 
         {{#if errorMessage}}
         <p class="form__error">{{errorMessage}}</p>
@@ -33,8 +33,7 @@
 
         <div class="form__input-group">
             <label class="form__label" for="address" class="label-ref label">Address</label>
-            <input class="form__input" id="autocomplete" type="string" name="address">
-            <div id="details">ddwe</div>
+            <input class="form__input" id="address" type="string" name="address">
         </div>
 
         <div class="form__input-group">
