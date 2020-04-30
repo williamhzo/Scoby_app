@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 html,
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -55,8 +55,14 @@ h5 {
     height: 40px;
     cursor: pointer;
     z-index: 1; }
-  .home .purple {
-    background-image: url("../media/marker-purple.svg"); }
+  .home .marker--purple {
+    background-image: url("../media/marker-purple.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1; }
   .home .marker__plant {
     background-image: url("../media/plant.svg");
     background-position: center center;
@@ -86,28 +92,6 @@ h5 {
   width: 550px;
   margin: 10vh auto 0;
   padding: 0 20px; }
-
-.info-card__container {
-  visibility: hidden;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  left: 25px;
-  top: 0px;
-  box-shadow: 0 0 50px lightgrey;
-  border-radius: 20px;
-  background-color: white;
-  min-width: 200px;
-  max-width: 30%;
-  padding: 25px;
-  margin: 75px auto;
-  z-index: 100; }
-
-.info-card__img {
-  max-width: 100%;
-  max-height: 300px;
-  margin: 25px auto 0; }
 
 .nav-bar {
   width: 100vw;

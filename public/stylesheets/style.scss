@@ -125,40 +125,6 @@ h5 {
   padding: 0 20px;
 }
 
-.info-card {
-  &__container {
-    visibility: hidden;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    left: 25px;
-    top: 0px;
-    box-shadow: 0 0 50px lightgrey;
-    border-radius: 20px;
-    background-color: white;
-    min-width: 200px;
-    max-width: 30%;
-    padding: 25px;
-    margin: 75px auto;
-    z-index: 100;
-  }
-
-  &__img {
-    max-width: 100%;
-    max-height: 300px;
-    margin: 25px auto 0;
-  }
-
-  &__title {
-  }
-
-  &__text {
-  }
-
-  &__btn {
-  }
-}
 
 .nav-bar {
   width: 100vw;
@@ -224,8 +190,7 @@ h5 {
 
   .nav-bar__link svg {
     margin-right: 0.5rem;
-    filter: invert(43%) sepia(88%) saturate(3991%) hue-rotate(224deg)
-      brightness(98%) contrast(107%);
+    filter: invert(43%) sepia(88%) saturate(3991%) hue-rotate(224deg) brightness(98%) contrast(107%);
     position: relative;
     top: 0.3rem;
   }
@@ -262,7 +227,7 @@ h5 {
     top: 0;
   }
 
-  #toggle:checked + .nav-bar__links {
+  #toggle:checked+.nav-bar__links {
     animation: 0.5s fadeInRight;
     display: block;
   }
