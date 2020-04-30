@@ -58,19 +58,23 @@ function getAllItems() {
 function loadAllItems(items) {
   items.forEach((marker) => {
     const marker__container = document.createElement('div');
-    marker__container.className = 'marker';
-    // marker__container.className = 'marker-plant';
-    // marker__container.className = 'marker-mushroom';
+    const marker__category = document.createElement('div');
+    marker__container.className = 'marker--purple';
+    marker__container.appendChild(marker__category);
 
-    switch (marker.properties.category) {
+    switch (marker.properties.category[0]) {
       case 'Plant':
-        marker__container.className = 'marker__plant';
+        marker__category.classList.add('marker__plant');
+        break;
       case 'Kombucha':
-        marker__container.className = 'marker__kombucha';
+        marker__category.classList.add('marker__kombucha');
+        break;
       case 'Kefir':
-        marker__container.className = 'marker__vinegar';
+        marker__category.classList.add('marker__vinegar');
+        break;
       case 'Vinegar':
-        marker__container.className = 'marker__kefir';
+        marker__category.classList.add('marker__kefir');
+        break;
     }
 
     new mapboxgl.Marker(marker__container)

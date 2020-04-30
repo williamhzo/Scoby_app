@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 $background: #f8f9fd;
 $primary: #5663ff;
 
 html,
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -67,7 +67,7 @@ h5 {
   }
 
   .marker {
-    background-image: url("../media/marker.svg");
+    background-image: url('../media/marker.svg');
     background-position: center center;
     background-repeat: no-repeat;
     width: 40px;
@@ -76,12 +76,18 @@ h5 {
     z-index: 1;
   }
 
-  .purple {
-    background-image: url("../media/marker-purple.svg");
+  .marker--purple {
+    background-image: url('../media/marker-purple.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1;
   }
 
   .marker__plant {
-    background-image: url("../media/plant.svg");
+    background-image: url('../media/plant.svg');
     background-position: center center;
     background-repeat: no-repeat;
     height: 100%;
@@ -89,7 +95,7 @@ h5 {
   }
 
   .marker__kombucha {
-    background-image: url("../media/kombucha.svg");
+    background-image: url('../media/kombucha.svg');
     background-position: center center;
     background-repeat: no-repeat;
     height: 90%;
@@ -97,7 +103,7 @@ h5 {
   }
 
   .marker__vinegar {
-    background-image: url("../media/vinegar.svg");
+    background-image: url('../media/vinegar.svg');
     background-position: center center;
     background-repeat: no-repeat;
     height: 100%;
@@ -105,13 +111,12 @@ h5 {
   }
 
   .marker__kefir {
-    background-image: url("../media/kefir.svg");
+    background-image: url('../media/kefir.svg');
     background-position: center center;
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
   }
-
 }
 
 .about__container {
@@ -145,11 +150,14 @@ h5 {
     margin: 25px auto 0;
   }
 
-  &__title {}
+  &__title {
+  }
 
-  &__text {}
+  &__text {
+  }
 
-  &__btn {}
+  &__btn {
+  }
 }
 
 .nav-bar {
@@ -216,7 +224,8 @@ h5 {
 
   .nav-bar__link svg {
     margin-right: 0.5rem;
-    filter: invert(43%) sepia(88%) saturate(3991%) hue-rotate(224deg) brightness(98%) contrast(107%);
+    filter: invert(43%) sepia(88%) saturate(3991%) hue-rotate(224deg)
+      brightness(98%) contrast(107%);
     position: relative;
     top: 0.3rem;
   }
@@ -253,7 +262,7 @@ h5 {
     top: 0;
   }
 
-  #toggle:checked+.nav-bar__links {
+  #toggle:checked + .nav-bar__links {
     animation: 0.5s fadeInRight;
     display: block;
   }
