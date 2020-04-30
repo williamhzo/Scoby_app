@@ -21,11 +21,18 @@ router.get('/add-item', requireAuth, (req, res, next) => {
 // Create new item form
 router.post('/', requireAuth, uploadCloud.single('image'), (req, res, next) => {
   const id_user = req.session.currentUser._id;
-  const image = req.file.secure_url;
+
+  if (req.file) {
+    const image = req.file.secure_url;
+    req.body = {
+      ...req.body,
+      image
+    }
+  }
+
   Item.create({
       ...req.body,
       id_user,
-      image,
     })
     .then((dbResult) => {
       Item.find({})
