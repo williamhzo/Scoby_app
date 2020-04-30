@@ -19,8 +19,8 @@ router.get('/add-item', requireAuth, (req, res, next) => {
 });
 
 // Create new item form
-router.post('/add-new-item', requireAuth, uploadCloud.single('image'), (req, res, next) => {
-  const id_user = res.locals.user._id;
+router.post('/', requireAuth, uploadCloud.single('image'), (req, res, next) => {
+  const id_user = req.session.currentUser._id;
   const image = req.file.secure_url;
   Item.create({
       ...req.body,
@@ -30,9 +30,7 @@ router.post('/add-new-item', requireAuth, uploadCloud.single('image'), (req, res
     .then((dbResult) => {
       Item.find({})
         .then((dbResult) => {
-          res.render('./items/itemForm', {
-            items: dbResult,
-          });
+          res.redirect('/');
         })
         .catch((err) => {
           console.log(err);
