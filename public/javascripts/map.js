@@ -82,6 +82,7 @@ function loadAllItems(items) {
       .addTo(map);
 
     marker__container.addEventListener('click', () => {
+      marker__container.className = 'marker--active';
       itemInfo.style.visibility = 'visible';
       itemInfo.innerHTML = `
       <a class="closeLink">Close</a>
@@ -92,6 +93,7 @@ function loadAllItems(items) {
       
         <span>${marker.properties.category} </span></div>
         <p class=''>${marker.properties.description}</p>
+        <p class=''>${marker.properties.address}</p>
         <div class="user__info">
         <div class="round__image__user">
         <img src='${marker.properties.userImg}'></img></div>
@@ -101,6 +103,7 @@ function loadAllItems(items) {
 
       document.querySelector('.closeLink').addEventListener('click', () => {
         itemInfo.style.visibility = 'hidden';
+        marker__container.className = 'marker--purple';
       });
     });
   });
@@ -110,4 +113,5 @@ getAllItems();
 
 document.querySelector('.mapboxgl-canvas').addEventListener('click', () => {
   itemInfo.style.visibility = 'hidden';
+  document.querySelectorAll('.marker--active').className = 'marker--purple';
 });

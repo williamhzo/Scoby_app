@@ -66,7 +66,7 @@ h5 {
     }
   }
 
-  .marker {
+  .marker--active {
     background-image: url('../media/marker.svg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -84,6 +84,10 @@ h5 {
     height: 40px;
     cursor: pointer;
     z-index: 1;
+  }
+
+  .marker--purple:active {
+    background-image: url('../media/marker.svg');
   }
 
   .marker__plant {
