@@ -6,20 +6,22 @@ function initAutocomplete() {
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('autocomplete'), {
       componentRestrictions: {
-        "country": ["FR", "SE"]
+        "country": ["FR", "SE"],
         // fields: ["place_id", "geometry", "name"]
       }
     });
+
+  autocomplete.setFields(['place_id']);
 }
 
-autocomplete.addListener("place_changed", onPlaceChanged);
+// autocomplete.addListener("place_changed", onPlaceChanged);
 
-function onPlaceChanged() {
-  let place = autocomplete.getPlace();
+// function onPlaceChanged() {
+//   const place = autocomplete.getPlace();
 
-  if (!place.geometry) {
-    document.getElementById("autocomplete").placeholder = "Enter a location"
-  } else {
-    document.getElementById("details").innerHTML = place.name;
-  }
-}
+//   if (!place.geometry) {
+//     document.getElementById("autocomplete").placeholder = "Enter a location"
+//   } else {
+//     document.getElementById("details").innerHTML = "djweoewjerji" + place.name;
+//   }
+// }

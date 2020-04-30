@@ -58,7 +58,6 @@ function getAllItems() {
 function loadAllItems(items) {
   items.forEach((marker) => {
     const marker__container = document.createElement('div');
-
     marker__container.className = 'marker';
     // marker__container.className = 'marker-plant';
     // marker__container.className = 'marker-mushroom';
