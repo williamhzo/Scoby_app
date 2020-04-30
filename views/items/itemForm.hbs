@@ -55,17 +55,14 @@
             <div>
                 <input type="radio" name="contact" value="{{user.email}}">{{user.email}}</div>
 
-            {{#if contact}}
-            <input type="radio" name="contact" value="{{contact}}">{{contact.0.phoneNumber}}
+            {{#if contact.0.phoneNumber}}
+            <input type="radio" name="contact" value="{{contact.0.phoneNumber}}">{{contact.0.phoneNumber}}
             {{/if}}
         </div>
-        {{!-- <select name="contact" id="contact" class="form__select" required>
-                <option value="-1" disabled selected>Choose a preferred contact</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select> --}}
-        <p>Add a phone number in your personal page</p>
+
+        <p class="form__message">
+            <img src="/media/info.svg" alt="">
+            Want to be contacted by phone?</p>
         </div>
 
         <button class="form__button" type="submit">Add item</button>

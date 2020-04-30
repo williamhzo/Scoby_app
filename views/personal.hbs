@@ -6,7 +6,7 @@
     <a href="/personal/edit-profile/{{user._id}}">Edit profile</a></a>
   </div>
 
-  {{#unless contact}}
+  {{#unless contact.0.phoneNumber}}
   <div class="use__contact">
     <h4>Add a phone number</h4>
     <form action="/add-contact" method="POST" class="form">

@@ -11,8 +11,6 @@ router.get('/add-item', requireAuth, (req, res, next) => {
       id_user: res.locals.user._id
     })
     .then((dbresult) => {
-      console.log(dbresult)
-      console.log(dbresult.phoneNumber)
       res.render('./items/itemForm', {
         contact: dbresult
       });

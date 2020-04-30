@@ -71,14 +71,12 @@ router.post('/update-account', requireAuth, uploadCloud.single('profileImg'), (r
       profileImg
     }
   }
-  console.log(updatedProfile)
   User.findByIdAndUpdate(
       req.session.currentUser._id, updatedProfile, {
         new: true
       }
     )
     .then((dbResult) => {
-      console.log(dbResult)
       req.session.currentUser = dbResult;
       res.redirect('/personal/edit-profile/' + req.session.currentUser._id)
     })
