@@ -129,8 +129,8 @@ h5 {
     justify-content: start;
     left: 25px;
     top: 0px;
-    box-shadow: 0 0 5px black;
-    border-radius: 15px;
+    box-shadow: 0 0 50px lightgrey;
+    border-radius: 20px;
     background-color: white;
     min-width: 200px;
     max-width: 30%;
@@ -211,11 +211,12 @@ h5 {
     font-size: 1.2rem;
     border-radius: 10px;
     text-decoration: none;
+    cursor: pointer;
   }
 
   .nav-bar__link svg {
     margin-right: 0.5rem;
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    filter: invert(43%) sepia(88%) saturate(3991%) hue-rotate(224deg) brightness(98%) contrast(107%);
     position: relative;
     top: 0.3rem;
   }
@@ -230,14 +231,17 @@ h5 {
   .nav-bar__links {
     display: none;
     text-align: right;
-    margin: 2rem 5rem 0 0;
-    width: 100%;
+    margin: 5rem 3rem 0 0;
+    width: auto;
+    background-color: $background;
+    border-radius: 20px;
+    box-shadow: 0 0 50px lightgrey;
   }
 
   .nav-bar__link {
     display: block;
     height: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .nav-bar__nav-items {
@@ -253,11 +257,25 @@ h5 {
     animation: 0.5s fadeInRight;
     display: block;
   }
+}
 
-  // #toggle + .nav-bar__links {
-  //   animation: 0.5s fadeOutRight;
-  //   display: none;
-  // }
+.add-item__container {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  right: 25px;
+  top: 0px;
+  box-shadow: 0 0 50px lightgrey;
+  border-radius: 20px;
+  background-color: $background;
+  min-width: 200px;
+  max-width: 30%;
+  padding: 25px;
+  margin: 75px auto;
+  z-index: 100;
+  animation: 0.5s fadeInRight;
 }
 
 @keyframes fadeInRight {

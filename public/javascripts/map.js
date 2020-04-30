@@ -49,7 +49,9 @@ function getAllItems() {
           address: item.address,
           image: item.image,
           creation_date: item.createdAt,
-          user: item.id_user,
+          userName: item.id_user.firstName,
+          userImg: item.id_user.profileImg,
+          contact: item.contact,
         },
         geometry: {
           type: 'Point',
@@ -100,7 +102,9 @@ function loadAllItems(items) {
         <h3 class='.info-card__title'>${marker.properties.name}</h3>
         <p class='.info-card__text'>${marker.properties.category}</p>
         <p class='.info-card__text'>${marker.properties.description}</p>
-        <p class='.info-card__text'>${marker.properties.user}</p>
+        <p class='.info-card__text'>${marker.properties.contact}</p>
+        <p class='.info-card__text'>${marker.properties.userName}</p>
+        <img src='${marker.properties.userImg}'></img>;
         <a class='.info-card__btn' href='' >Contact</a>
         <img class='info-card__img' src='${marker.properties.image}'></img>`;
     });

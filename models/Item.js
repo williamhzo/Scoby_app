@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const User = require('./User');
 const geocoder = require('../middlewares/geocoder');
 
-const itemSchema = new mongoose.Schema({
+const itemSchema = new Schema({
   name: String,
   image: {
     type: String,
