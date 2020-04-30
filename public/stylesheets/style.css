@@ -5,8 +5,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background: #f8f9fd;
-  overflow: hidden; }
+  background: #f8f9fd; }
 
 h1 {
   font-size: 2.2rem; }
@@ -92,6 +91,23 @@ h5 {
   width: 550px;
   margin: 10vh auto 0;
   padding: 0 20px; }
+  .about__container .about__copy {
+    line-height: 2rem; }
+  .about__container .about__logos {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly; }
+    .about__container .about__logos img {
+      height: 7vh; }
+  .about__container .about__names {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .about__container .about__names a {
+      text-decoration: none;
+      color: #5663ff;
+      font-weight: 600;
+      font-size: 1.4rem; }
 
 .add-item__container {
   visibility: hidden;

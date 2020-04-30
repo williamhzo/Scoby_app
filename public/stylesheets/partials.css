@@ -77,15 +77,27 @@
     animation: 0.5s fadeInRight;
     display: block; } }
 
-.back-button a {
-  color: black;
-  text-decoration: none; }
-
-.back-button img {
-  height: 10px;
-  margin-right: 10px; }
+.back-button {
+  width: auto; }
+  .back-button a {
+    color: black;
+    text-decoration: none; }
+  .back-button img {
+    height: 10px;
+    margin-right: 10px; }
 
 .is-visible {
   visibility: visible; }
+
+.error-page {
+  background-color: #f8f9fd;
+  width: 60%;
+  margin: 10vh auto 0;
+  padding: 0 20px;
+  text-align: center; }
+  .error-page p {
+    font-size: 1.2rem; }
+  .error-page img {
+    width: 100%; }
 
 /*# sourceMappingURL=partials.css.map */
