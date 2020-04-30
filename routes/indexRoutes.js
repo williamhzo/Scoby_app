@@ -18,3 +18,9 @@ router.get('/items', (req, res, next) => {
 });
 
 module.exports = router;
+
+// About page
+
+router.get('/about', (req, res, next) => {
+  res.render('about');
+})
