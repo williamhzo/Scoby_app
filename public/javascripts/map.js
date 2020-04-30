@@ -11,6 +11,7 @@ const map = new mapboxgl.Map({
 });
 
 const itemInfo = document.querySelector('.info-card__container');
+const closeLink = document.querySelector('.closeLink');
 
 map.addControl(new mapboxgl.NavigationControl(), 'bottom-right').addControl(
   new mapboxgl.GeolocateControl({
@@ -84,7 +85,7 @@ function loadAllItems(items) {
     marker__container.addEventListener('click', () => {
       itemInfo.style.visibility = 'visible';
       itemInfo.innerHTML = `
-      <a>Close</a>
+      <a class="closeLink">Close</a>
       <div class="round__image"><img class='info-card__UserImg' src='${marker.properties.image}'></img></div>
      
       <h2 class='info-card__title'>${marker.properties.name}</h2>
@@ -98,8 +99,8 @@ function loadAllItems(items) {
         <img src='${marker.properties.userImg}'></img></div>
         <span>Given away by ${marker.properties.userName}</span></div>
         <div class="contact__information">Contact ${marker.properties.userName} at <b>${marker.properties.contact}</b></div>
-        
         `
+      closeLink.style.visibility = "visible";
     });
   });
 }
@@ -108,4 +109,5 @@ getAllItems();
 
 document.querySelector('.mapboxgl-canvas').addEventListener('click', () => {
   itemInfo.style.visibility = 'hidden';
+  closeLink.style.visibility = 'hidden';
 });
