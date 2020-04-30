@@ -10,7 +10,7 @@ body {
   padding: 0;
   margin: 0;
   background: $background;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 h1 {
@@ -123,6 +123,33 @@ h5 {
   width: 550px;
   margin: 10vh auto 0;
   padding: 0 20px;
+
+  .about__copy {
+    line-height: 2rem;
+  }
+
+  .about__logos {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+
+    img {
+      height: 7vh;
+    }
+  }
+
+  .about__names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $primary;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+  }
 }
 
 .add-item__container {
