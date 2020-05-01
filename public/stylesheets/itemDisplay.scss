@@ -41,8 +41,8 @@ $primary: #5663ff;
 
       img {
         position: absolute;
-        width: auto;
-        height: 100%;
+        width: 100%;
+        object-fit: cover;
       }
     }
 
@@ -56,8 +56,8 @@ $primary: #5663ff;
 
       img {
         position: absolute;
-        width: auto;
-        height: 100%;
+        width: 100%;
+        object-fit: cover;
       }
     }
 

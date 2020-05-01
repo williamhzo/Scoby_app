@@ -10,7 +10,7 @@ body {
   padding: 0;
   margin: 0;
   background: $background;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 h1 {
@@ -49,6 +49,7 @@ a {
   align-items: center;
   justify-content: space-between;
   z-index: 0;
+  overflow: hidden;
 
   &__map {
     width: 100%;
