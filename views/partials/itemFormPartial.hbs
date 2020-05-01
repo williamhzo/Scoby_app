@@ -1,15 +1,15 @@
-<section class="form-section">
+<section class="form-section add__item">
 
     <header class="form-section__header">
-        <h1>Add item</h1>
+
     </header>
 
-    <form action="/" method="POST" class="form" enctype="multipart/form-data">
+    <form action="/add-new-item" method="POST" class="form" enctype="multipart/form-data">
 
         {{#if errorMessage}}
         <p class="form__error">{{errorMessage}}</p>
         {{/if}}
-
+        <h1>Add item</h1>
         <div class="form__input-group">
             <label class="form__label" for="name" class="label-ref label">Name</label>
             <input class="form__input" id="name" type="text" name="name" placeholder="What are you giving away?">
@@ -43,11 +43,11 @@
         </div>
 
         <div class="form__input-group">
-            <label class="form__label" for="image" class="label-ref label">Image</label>
+            <label class="form__label custom-file-upload" for="image" class="label-ref label">Upload image</label>
             <input class="form__input" id="image" type="file" name="image">
         </div>
 
-        <h3>Contact information</h3>
+        <h2>Contact information</h2>
 
         <div class="form__input-group">
             <label class="form__label" for="contact">How do you want to be reached?</label>
@@ -62,7 +62,9 @@
 
         <p class="form__message">
             <img src="/media/info.svg" alt="">
-            Want to be contacted by phone?</p>
+            Want to be contacted by phone? Add your phone number in your
+            personal page.</p>
+        </div>
 
         <button class="form__button" type="submit">Add item</button>
     </form>

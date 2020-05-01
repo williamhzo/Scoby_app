@@ -14,23 +14,29 @@ body {
 }
 
 h1 {
-  font-size: 2.2rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-}
-
-h3 {
   font-size: 1.4rem;
 }
 
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  font-size: 0.9rem;
+}
+
 h4 {
-  font-size: 1.2rem;
+  font-size: 0.6rem;
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 0.5rem;
+}
+
+a {
+  color: $primary;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 // Map display test
@@ -158,24 +164,6 @@ h5 {
   }
 }
 
-.add-item__container {
-  visibility: hidden;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  right: 25px;
-  top: 0px;
-  box-shadow: 0 0 50px lightgrey;
-  border-radius: 20px;
-  background-color: $background;
-  min-width: 200px;
-  max-width: 30%;
-  padding: 25px;
-  margin: 75px auto;
-  z-index: 100;
-  animation: 0.5s fadeInRight;
-}
 
 @keyframes fadeInRight {
   from {
