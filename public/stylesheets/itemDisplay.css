@@ -12,23 +12,33 @@
   width: 400px;
   padding: 25px;
   margin: 75px auto;
-  z-index: 100; }
-  .info-card__container a {
-    visibility: hidden; }
+  z-index: 100;
+  overflow-y: auto;
+  max-height: 80vh; }
+  .info-card__container .closeLink {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    border-radius: 10px;
+    color: #5663ff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer; }
   .info-card__container .round__image {
     height: 150px;
     width: 150px;
     border-radius: 100%;
     overflow: hidden;
     position: relative;
-    margin: 0 auto 10px; }
+    margin: 25px auto 10px; }
     .info-card__container .round__image img {
       position: absolute;
       width: auto;
       height: 100%; }
   .info-card__container .round__image__user {
-    height: 30px;
-    width: 30px;
+    min-height: 30px;
+    min-width: 30px;
     border-radius: 100%;
     overflow: hidden;
     position: relative;
@@ -53,11 +63,11 @@
   .info-card__container .contact__information {
     text-align: center;
     margin-top: 20px;
-    background: #F1F2FF;
+    background: #f1f2ff;
     padding: 15px;
     width: 94%;
     border-radius: 10px;
-    color: #5663FF;
+    color: #5663ff;
     font-size: 14px;
     font-weight: 500; }
 
@@ -75,9 +85,6 @@
     width: 300px;
     padding: 25px;
     margin: 75px auto;
-    z-index: 100; }
-    .info-card__container a {
-      visibility: visible;
-      text-align: end; } }
+    z-index: 100; } }
 
 /*# sourceMappingURL=itemDisplay.css.map */

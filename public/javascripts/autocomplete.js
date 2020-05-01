@@ -1,18 +1,28 @@
 let autocomplete;
+const input = document.getElementById('autocomplete');
 
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search predictions to
   // geographical location types.
   autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById('autocomplete'), {
+    document.getElementById('autocomplete'),
+    {
       componentRestrictions: {
-        "country": ["FR", "SE"],
+        country: ['FR', 'SE'],
         // fields: ["place_id", "geometry", "name"]
-      }
-    });
+      },
+    }
+  );
 
   autocomplete.setFields(['place_id']);
 }
+
+google.maps.event.addDomListener(input, 'keydown', function (e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    console.log('hey');
+  }
+});
 
 // autocomplete.addListener("place_changed", onPlaceChanged);
 

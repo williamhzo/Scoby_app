@@ -13,7 +13,6 @@ router.get('/items', (req, res, next) => {
     .populate('id_user')
     .then((response) => {
       res.send(response);
-      console.log('response after populate:', response);
     })
     .catch((error) => {
       console.log(error);

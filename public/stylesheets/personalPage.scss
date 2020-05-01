@@ -1,4 +1,4 @@
-$primary: #5663FF;
+$primary: #5663ff;
 
 .personal-section {
   max-width: 800px;
@@ -7,6 +7,8 @@ $primary: #5663FF;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: auto;
+  max-height: 75vh;
 
   .stack__empty__state {
     margin-top: 60px;
@@ -37,7 +39,7 @@ $primary: #5663FF;
 
   .use__contact {
     margin-top: 20px;
-    background: #F1F2FF;
+    background: #f1f2ff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +52,6 @@ $primary: #5663FF;
     }
 
     form {
-
       .form__input-group {
         .form__input {
           margin-top: 8px;
@@ -143,7 +144,6 @@ $primary: #5663FF;
           color: $primary;
           background: transparent;
           border: 1px solid $primary;
-          ;
           font-size: 16px;
         }
       }
@@ -153,7 +153,7 @@ $primary: #5663FF;
       text-align: center;
     }
 
-    @media (min-width:480px) {
+    @media (min-width: 480px) {
       .stack__item {
         flex-direction: row-reverse;
 
@@ -162,10 +162,7 @@ $primary: #5663FF;
           margin-right: 30px;
           text-align: left;
         }
-
       }
     }
   }
-
-
 }
