@@ -3,7 +3,7 @@
   margin: 3vh auto 0;
   padding: 0 20px;
   overflow-y: auto;
-  max-height: 80vh; }
+  max-height: 75vh; }
   .form-section .round__image {
     height: 250px;
     width: 250px;
@@ -98,10 +98,18 @@
       font-size: 16px;
       border-radius: 10px;
       border: none; }
+    .form-section form .closeCross {
+      text-align: right;
+      font-weight: 900;
+      font-size: 1.4rem;
+      cursor: pointer;
+      float: right;
+      text-decoration: none;
+      color: black; }
   .form-section .form-section__link {
     text-align: center; }
 
-.edit__phoneNumber {
+close .edit__phoneNumber {
   margin-top: 20px; }
 
 /*# sourceMappingURL=forms.css.map */

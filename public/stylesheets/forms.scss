@@ -125,13 +125,25 @@ $primary: #5663ff;
       border-radius: 10px;
       border: none;
     }
+
+    .closeCross {
+      text-align: right;
+      font-weight: 900;
+      font-size: 1.4rem;
+      cursor: pointer;
+      float: right;
+      text-decoration: none;
+      color: black;
+    }
   }
 
   .form-section__link {
     text-align: center;
   }
+
+
 }
 
-.edit__phoneNumber {
+close .edit__phoneNumber {
   margin-top: 20px;
 }

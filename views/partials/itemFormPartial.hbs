@@ -1,10 +1,10 @@
 <section class="form-section">
 
-    <header class="form-section__header">
-        <h1>Add item</h1>
-    </header>
+    <form action="/" method="POST" class="add-item__form" enctype="multipart/form-data">
 
-    <form action="/" method="POST" class="form" enctype="multipart/form-data">
+        <a class="closeCross">X</a>
+
+        <h3 class="add-item__header">Add item</h3>
 
         {{#if errorMessage}}
         <p class="form__error">{{errorMessage}}</p>
@@ -38,7 +38,7 @@
 
         <div class="form__input-group">
             <label class="form__label" for="description" class="label-ref label">Description</label>
-            <textarea class="form__text-area" id="description" name="description" rows="5"
+            <textarea class="form__text-area" id="description" name="description" rows="3"
                 placeholder="Tell us something about this item"></textarea>
         </div>
 

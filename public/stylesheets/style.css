@@ -93,7 +93,9 @@ h5 {
 .about__container {
   width: 550px;
   margin: 10vh auto 0;
-  padding: 0 20px; }
+  padding: 0 20px;
+  max-height: 80vh;
+  overflow-y: auto; }
   .about__container .about__copy {
     line-height: 2rem; }
   .about__container .about__logos {
@@ -111,24 +113,6 @@ h5 {
       color: #5663ff;
       font-weight: 600;
       font-size: 1.4rem; }
-
-.add-item__container {
-  visibility: hidden;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  right: 25px;
-  top: 0px;
-  box-shadow: 0 0 50px lightgrey;
-  border-radius: 20px;
-  background-color: #f8f9fd;
-  min-width: 200px;
-  max-width: 30%;
-  padding: 25px;
-  margin: 75px auto;
-  z-index: 100;
-  animation: 0.5s fadeInRight; }
 
 @keyframes fadeInRight {
   from {

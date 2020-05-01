@@ -14,7 +14,7 @@
   margin: 75px auto;
   z-index: 100;
   overflow-y: auto;
-  max-height: 80vh; }
+  max-height: 75vh; }
   .info-card__container .closeLink {
     position: absolute;
     right: 20px;
