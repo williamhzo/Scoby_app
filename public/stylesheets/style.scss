@@ -14,6 +14,7 @@ body {
 }
 
 h1 {
+<<<<<<< HEAD
     font-size: 2.2rem;
 }
 
@@ -31,6 +32,31 @@ h4 {
 
 h5 {
     font-size: 1rem;
+=======
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  font-size: 0.9rem;
+}
+
+h4 {
+  font-size: 0.6rem;
+}
+
+h5 {
+  font-size: 0.5rem;
+}
+
+a {
+  color: $primary;
+  font-weight: 700;
+  text-decoration: none;
+>>>>>>> e184dcfb5413c951716b40dd2042fcf193759ea4
 }
 
 // Map display test
@@ -123,6 +149,7 @@ h5 {
     }
 }
 
+<<<<<<< HEAD
 .about__container {
     width: 550px;
     margin: 10vh auto 0;
@@ -157,6 +184,8 @@ h5 {
         }
     }
 }
+=======
+>>>>>>> e184dcfb5413c951716b40dd2042fcf193759ea4
 
 @keyframes fadeInRight {
     from {
@@ -173,6 +202,7 @@ h5 {
 }
 
 @keyframes fadeOutRight {
+<<<<<<< HEAD
     from {
         opacity: 1;
     }
@@ -182,4 +212,15 @@ h5 {
         -webkit-transform: translate3d(100%, 0, 0);
         transform: translate3d(100%, 0, 0);
     }
+=======
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+>>>>>>> e184dcfb5413c951716b40dd2042fcf193759ea4
 }
