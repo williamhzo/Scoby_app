@@ -103,6 +103,10 @@ function loadAllItems(items) {
       document.querySelector('.closeLink').addEventListener('click', () => {
         itemInfo.style.visibility = 'hidden';
       });
+
+      document.querySelector('.mapboxgl-canvas').addEventListener('click', () => {
+        itemInfo.style.visibility = 'hidden';
+      });
     });
   });
 }
