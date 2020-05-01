@@ -5,7 +5,7 @@ $lightGray: #EFF1F6;
   max-width: 550px;
   margin: 3vh auto 0;
   padding: 0 20px;
-  overflow-y: auto;
+  // overflow-y: auto;
   max-height: 75vh;
 
   .round__image {
@@ -18,8 +18,8 @@ $lightGray: #EFF1F6;
 
     img {
       position: absolute;
-      width: auto;
-      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -126,6 +126,7 @@ $lightGray: #EFF1F6;
       display: inline-block;
       padding: 10px 22px;
       cursor: pointer;
+      margin-bottom: 20px;
     }
 
     button {
