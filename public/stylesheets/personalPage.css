@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
-  max-height: 80vh; }
+  max-height: 75vh; }
   .personal-section .stack__empty__state {
     margin-top: 60px;
     display: flex;

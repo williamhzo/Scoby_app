@@ -3,4 +3,3 @@ node_modules/
 package-lock.json
 .DS_store
 .vscode/settings.json
-public/stylesheets/*.css
