@@ -96,7 +96,6 @@ $primary: #5663ff;
   }
 }
 
-
 .add-item__container {
   visibility: hidden;
   position: absolute;
@@ -137,23 +136,22 @@ $primary: #5663ff;
   }
 }
 
-
 @media (max-width: 768px) {
   .add-item__container {
-    right: auto;
+    right: 2vh;
     visibility: hidden;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    top: 0%;
-    box-shadow: 0 0 50px lightgrey;
-    border-radius: 20px;
-    background-color: white;
+    // position: absolute;
+    // // display: flex;
+    // // flex-direction: column;
+    // // justify-content: start;
+    // top: 0%;
+    // box-shadow: 0 0 50px lightgrey;
+    // border-radius: 20px;
+    // background-color: white;
     width: 300px;
     padding: 10px;
     margin: 75px auto;
-    z-index: 100;
+    // z-index: 100;
 
     .form-section form {
       padding: 10px;

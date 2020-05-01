@@ -35,6 +35,8 @@ $primary: #5663ff;
 
   .user__image {
     margin: 0px auto;
+    height: 200px;
+    width: 200px;
   }
 
   .use__contact {
@@ -121,7 +123,7 @@ $primary: #5663ff;
 
       .stack__item__description {
         flex: 2;
-        margin-right: 30px;
+        // margin-right: 30px;
         text-align: center;
 
         h2 {
@@ -153,7 +155,7 @@ $primary: #5663ff;
       text-align: center;
     }
 
-    @media (min-width: 480px) {
+    @media (min-width: 550px) {
       .stack__item {
         flex-direction: row-reverse;
 
