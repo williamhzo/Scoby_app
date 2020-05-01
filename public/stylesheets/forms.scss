@@ -138,11 +138,23 @@ $lightGray: #EFF1F6;
       border-radius: 10px;
       border: none;
     }
+
+    .closeCross {
+      text-align: right;
+      font-weight: 900;
+      font-size: 1.4rem;
+      cursor: pointer;
+      float: right;
+      text-decoration: none;
+      color: black;
+    }
   }
 
   .form-section__link {
     text-align: center;
   }
+
+
 }
 
 .edit__phoneNumber {
