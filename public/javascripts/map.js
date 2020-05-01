@@ -70,10 +70,10 @@ function loadAllItems(items) {
         marker__category.classList.add('marker__kombucha');
         break;
       case 'Kefir':
-        marker__category.classList.add('marker__vinegar');
+        marker__category.classList.add('marker__kefir');
         break;
       case 'Vinegar':
-        marker__category.classList.add('marker__kefir');
+        marker__category.classList.add('marker__vinegar');
         break;
     }
 
@@ -104,9 +104,11 @@ function loadAllItems(items) {
         itemInfo.style.visibility = 'hidden';
       });
 
-      document.querySelector('.mapboxgl-canvas').addEventListener('click', () => {
-        itemInfo.style.visibility = 'hidden';
-      });
+      document
+        .querySelector('.mapboxgl-canvas')
+        .addEventListener('click', () => {
+          itemInfo.style.visibility = 'hidden';
+        });
     });
   });
 }
