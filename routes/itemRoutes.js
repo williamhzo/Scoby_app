@@ -29,7 +29,6 @@ router.post('/', requireAuth, uploadCloud.single('image'), (req, res, next) => {
       image
     }
   }
-
   Item.create({
       ...req.body,
       id_user,

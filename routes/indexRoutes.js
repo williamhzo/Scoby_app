@@ -3,8 +3,18 @@ const router = express.Router();
 const Item = require('../models/Item');
 const Contact = require('../models/Contact');
 
+
+
 router.get('/', (req, res, next) => {
-  res.render('home');
+  Contact.find({
+      id_user: res.locals.user._id
+    })
+    .then((dbresult) => {
+      res.render('home', {
+        contact: dbresult
+      });
+    })
+    .catch(next)
 });
 
 // Axios route

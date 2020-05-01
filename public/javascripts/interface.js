@@ -1,5 +1,5 @@
 const addItemButton = document.querySelector('.add-item-button');
-const addItemForm = document.querySelector('.add-item__form');
+const addItemForm = document.querySelector('.add-item__container');
 const closeCross = document.querySelector('.closeCross');
 
 addItemButton.addEventListener('click', () => {
