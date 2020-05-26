@@ -4,12 +4,6 @@ https://scoby-frw.herokuapp.com/
 
 Scoby is a map-based app where people can easily share and find scobies, plant cuttings, or other organic goods.
 
-## Table of contents
-
-- [General info](#general-info)
-- [Technologies](#technologies)
-- [Contributors](#contributors)
-
 ## General info
 
 This project was built from scratch in 6 days, in the frame of Ironhack's Web Development's bootcamp.
