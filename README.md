@@ -1,8 +1,8 @@
 # Freely app
 
-https://freely.cool/
+https://scoby-frw.herokuapp.com/
 
-Freely is the freelance platform for freelancers. It's an open community where they can meet, connect and team-up to build awesome projects.
+Scoby is a map-based app where people can easily share and find scobies, plant cuttings, or other organic goods.
 
 ## Table of contents
 
@@ -12,7 +12,7 @@ Freely is the freelance platform for freelancers. It's an open community where t
 
 ## General info
 
-This project was built from scratch in 7 days, in the frame of Ironhack's Web Development's bootcamp.
+This project was built from scratch in 6 days, in the frame of Ironhack's Web Development's bootcamp.
 
 Scoby grew in the mind of three web development students @ Ironhack Paris. It is a platform to give away plant cuttings, kefir seeds, vinegar and kombucha scobies. All those little things you never know where to find, and which would be so nice to share. 
 
